@@ -5,6 +5,10 @@ import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
+import { AiFillHome } from "react-icons/ai";
+import { IoPersonAddSharp } from "react-icons/io5";
+import { BsCalendarCheck } from "react-icons/bs";
+import { IoIosPaper } from "react-icons/io";
 
 const DoctorHome = () => {
 
@@ -21,14 +25,33 @@ const DoctorHome = () => {
       <li id="profile"><BsPersonCircle /></li>
       <li id="chat"><BsChatFill /></li>
       <li id="logout"><IoIosLogOut /></li>
-
     </ul>
-    
   </div>
-  
   </div>
     </div>
   </div>
+
+  <div className="body">
+    <div className="bodyLeft">
+      <div className="navTitle">
+        <p className="mainNav"> MAIN NAVIGATION </p>
+      </div>
+      <ul className="ulNav"> 
+      <li className="nav"> <AiFillHome className="iconNav" /> Home </li>
+      <li className="nav"> <IoPersonAddSharp className="iconNav"/> Patients </li>
+      <li className="nav"> <BsCalendarCheck className="iconNav"/> Appointments </li>
+      <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
+      </ul>
+    </div>
+    <div className="bodyRight">
+      <h2 className="bodyHomeh2"> Home </h2>
+      <h5 className="bodyHomeh5">  Welcome to Readings App</h5>
+      </div>
+
+
+    
+  </div>
+
   </>;
 };
 

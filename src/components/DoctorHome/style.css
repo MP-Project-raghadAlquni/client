@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Roboto:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
+
 
  .header {
      background-image: url("../images/Background.png");
@@ -31,9 +33,54 @@
     display: inline-block;
     font-size: 1.1rem;
     margin-right: 1rem;
+    color: white;
  }
 
  .iconsul {
-     margin-left: -1.7rem;
+     margin-left: -2.4rem;
      margin-top: -0.7rem;
+ }
+
+ body {
+     background-color: rgb(49, 55, 61);
+ }
+
+ .navTitle {
+     background-color: rgb(56, 62, 69);
+     padding: 0.1px;
+     width: 18%;
+ }
+
+ .mainNav {
+    font-family: 'Tajawal', sans-serif;
+    color: rgba(255, 255, 255, 0.831);
+    margin-left: 1rem;
+    margin-bottom: 8px;
+ }
+
+ .nav {
+    display: block;
+    color: rgb(164, 163, 163);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+
+ }
+
+ .ulNav {
+     margin-left: -1.3rem;
+ }
+
+ .iconNav {
+     margin-right: 10px;
+     font-size: 1.3rem;
+     
+ }
+
+ .bodyRight {
+     background-color:rgb(243, 243, 243) ;
+     margin-left: 18rem;
+     margin-top: -30rem;
+     border-radius: 0.3rem;
+
  }
