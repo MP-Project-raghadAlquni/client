@@ -1,8 +1,23 @@
 import React from "react";
 import "./style.css";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../images/logo.png";
+
 
 const Home = () => {
-  return <div>Home</div>;
+    const location = useLocation();
+    const { pathname } = location;
+    const splitLocation = pathname.split("/");
+
+
+  return <div>
+      <ul>
+      <li className="logo"><img className="logo" src={logo} alt="logo" height={70}/></li>
+      <li className={splitLocation[1] === "" ? "active" : ""}>
+          <Link to="/Signup">New Doctor</Link>{" "}
+      </li>
+      </ul>
+      </div>
 };
 
 export default Home;
