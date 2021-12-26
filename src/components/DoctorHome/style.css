@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Roboto:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Playfair+Display&family=Roboto:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
  .header {
-     background-image: url("../images/Background.png");
-     height: 15rem;
+    background: linear-gradient(45deg
+    , #49C5B6, #AB9AE5);
+         height: 15rem;
  }
 
  #avatar {
@@ -79,8 +79,134 @@
 
  .bodyRight {
      background-color:rgb(243, 243, 243) ;
-     margin-left: 18rem;
+     margin-left: 15rem;
      margin-top: -30rem;
      border-radius: 0.3rem;
+     margin-right: 0.5rem;
+     font-family: arial, sans-serif;
+     min-height: 90vh;
+ }
+
+ .insideBody {
+    margin-left: 1.5rem;
+    padding-top: 0.1px;
 
  }
+
+
+
+ .patients {
+     color: black;
+ }
+
+
+
+ .ReadingsTables {
+     background-color: white;
+     border-radius: 0.5rem;
+     padding: 1rem;
+     margin-right: 1rem;
+     font-family: arial, sans-serif;
+     margin-top: 2rem;
+
+ }
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+
+  td, .title, .sup {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  .danger {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+
+
+
+  #services {
+  }
+
+ #patients {
+     background-color: white;
+     border-radius: 0.5rem;
+     margin-top: 1px;
+     padding: 0.5px 0px 0.1px 20px ;
+     width: 25%;
+ }
+
+ #iconPatient {
+     color: rgb(81, 127, 196);
+     font-size: 2rem;
+     margin-left: 17rem;
+     margin-top: -9rem;
+
+ }
+
+ #patientNum {
+     margin-top: -1rem;
+ }
+
+
+#appointments {
+    background-color: white;
+     border-radius: 0.5rem;
+     margin-top: -7rem;
+     margin-left: 25rem;
+     padding: 0.5px 0px 0.1px 20px ;
+     width: 25%;
+}
+
+#appointmentNum {
+    margin-top: -1rem;
+}
+
+#iconApointment {
+    color: rgb(121, 186, 190);
+     font-size: 2rem;
+     margin-left: 17rem;
+     margin-top: -9rem;
+}
+
+#Charts {
+    background-color: white;
+     border-radius: 0.5rem;
+     margin-top: -7rem;
+     margin-left: 50rem;
+     padding: 0.5px 0px 0.1px 20px ;
+     width: 25%;
+     min-height: 12.3vh;
+}
+
+#iconChart {
+    color: rgb(244, 104, 123);
+     font-size: 2rem;
+     margin-left: 17rem;
+     margin-top: -9rem;
+}
+
+#chartNum {
+    margin-top: -1rem;
+}
+
+.Add {
+    display:block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: none;
+    margin-bottom: 1rem;
+    position: absolute;
+    right: 10px;
+    background-color: rgb(113, 191, 185);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}

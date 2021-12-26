@@ -1,62 +1,67 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { userLogin } from "./../../reducers/login";
+import { useDispatch , useSelector} from "react-redux";
+import { userLogin } from "./../../reducers/login";
 import "./style.css";
 import axios from "axios";
 import Home from "../Home"
 
 const Login = () => {
   const navigate = useNavigate();
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [token, setToken] = useState("");
 
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log("your in ", token);
-    setToken(token);
-  }, []);
 
 
-//   const state = useSelector((state) => {
-//     return state
-//   });
+
+
+  const state = useSelector((state) => {
+    return state
+  });
 
 
   const login = async () => {
-    try {
       const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, {
         email,
         password,
       });
-      console.log(res);
-      setToken(res.data.token)
-      localStorage.setItem("token", res.data.token);
+
+      if(res.status !== 200) {
+        setMessage(res.data)
+      } else {
+        const data = {
+          role: res.data.result.role,
+          token: res.data.token,
+          id: res.data.result.id,
+        }
+        console.log(res);
+        dispatch(userLogin(data))
 
     if(res.data.result.role.role === "patient") { 
-        navigate("/PatientHome")
+        navigate("/Patient")
     } else if (res.data.result.role.role === "doctor"){
-        navigate("/DoctorHome")
+        navigate("/Doctor")
     } else if (res.data.result.role.role === "admin"){
         navigate("/DoctorHome")
     } 
-
-} catch (error) {
-    console.log(error);
-    setMessage(error.response.data.message);
 }
-}
+  }
 
   return (
     <>
-      {!token ? (
+    <div className="body">
+      {!state.Login.token ? (
         <div className="login">
-          <form>
+          <form
+              className="input"
+              onSubmit={(e) => {
+                e.preventDefault();
+                login(e);
+              }}>
             <label for="email"> Email: </label>
             <input
               type="text"
@@ -76,7 +81,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button onClick={login}> Login </button>
+              <input id="loginButton" type="submit" value="Submit" />
 
             <div className="toVerified">
               <p className="patientVerified">
@@ -97,6 +102,7 @@ const Login = () => {
         </div>
       ) : <Home  />
       }
+      </div>
     </>
   );
 };
