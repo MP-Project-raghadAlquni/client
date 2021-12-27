@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -17,7 +18,10 @@ import { BsFillPersonFill } from "react-icons/bs";
 
 const DoctorHome = () => {
 const [newReadings, setNewReadings] = useState([]);
+const [patients, setPatients] = useState([]);
 const [numberReadings, setNumberReadings] = useState([]);
+const [apppointment, setApppointment] = useState([]);
+
 
 
 const state = useSelector((state) => {
@@ -26,6 +30,14 @@ const state = useSelector((state) => {
 
 useEffect(() => {
   getNewReadings()
+})
+
+useEffect(() => {
+  getDoctorAppointments()
+})
+
+useEffect(() => {
+  getallverifiedPatient()
 })
 
 const getNewReadings = async () => {
@@ -37,8 +49,29 @@ const getNewReadings = async () => {
   })
   setNewReadings(users.data)
   setNumberReadings(users.data.length)
-  
 }
+
+
+const getDoctorAppointments = async () => {
+  const appointment = await axios.get(`${process.env.REACT_APP_BASE_URL}/doctorAppointments`, 
+  {
+    headers: {
+      Authorization: `Bearer ${state.Login.token}`,
+    }
+  })
+  setApppointment(appointment.data.length)
+}
+
+const getallverifiedPatient = async () => {
+  const patients = await axios.get(`${process.env.REACT_APP_BASE_URL}/verfiedPatients`, 
+  {
+    headers: {
+      Authorization: `Bearer ${state.Login.token}`,
+    }
+  })
+  setPatients(patients.data.length)
+}
+
 
 return (
   <>
@@ -73,7 +106,8 @@ return (
         <p className="mainNav"> MAIN NAVIGATION </p>
       </div>
       <ul className="ulNav"> 
-      <li className="nav"> <AiFillHome className="iconNav" /> Home </li>
+      <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Doctor">Home</Link> </li>
+    
       <li className="nav"> <IoPersonAddSharp className="iconNav"/> Patients </li>
       <li className="nav"> <BsCalendarCheck className="iconNav"/> Appointments </li>
       <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
@@ -88,19 +122,19 @@ return (
           <aside id="patients">
            <h3 id="patient"> All Patient </h3>
            <BsFillPersonFill id="iconPatient"/>
-           <h2 id="patientNum"> 27 </h2>
+           <h2 id="patientNum"> {patients} </h2>
             </aside>
 
            <aside id="appointments">
            <h3 id="appointment"> All Appointment </h3>
            <BsCalendarCheck id="iconApointment"/>
-           <h2 id="appointmentNum"> 27 </h2>
+           <h2 id="appointmentNum"> {apppointment} </h2>
            </aside>
 
            <aside id="Charts">
            <h3 id="chart"> Charts </h3>
            <BiBarChartSquare id="iconChart"/> 
-           <h2 id="chartNum"> 27 </h2>
+           <h2 id="chartNum"> {numberReadings} </h2>
            </aside>
       </div>
 

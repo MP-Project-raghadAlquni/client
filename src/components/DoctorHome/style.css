@@ -59,13 +59,21 @@
  }
 
  .nav {
-    display: block;
     color: rgb(164, 163, 163);
+    display: block;
     margin-bottom: 2rem;
     font-size: 1.1rem;
     font-family: 'Open Sans', sans-serif;
 
  }
+
+ .navLink {
+    text-decoration: none;
+    color: rgb(164, 163, 163);
+
+ }
+
+ 
 
  .ulNav {
      margin-left: -1.3rem;
