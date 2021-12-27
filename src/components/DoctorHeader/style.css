@@ -1,0 +1,91 @@
+.header {
+    background: linear-gradient(45deg
+    , #49C5B6, #AB9AE5);
+         height: 15rem;
+ }
+
+ #avatar {
+     border-radius: 8rem;
+     margin-left: 1rem;
+     margin-top: 8rem;
+ }
+
+ .welcomeName {
+     margin-top: -6rem;
+     margin-left: 7rem;
+     color: white;
+     font-size: 0.8rem;
+     font-family: 'Open Sans', sans-serif;
+ }
+
+ #name {
+    font-size: 1.3rem;
+    font-family: 'Noto Sans', sans-serif;
+    
+ }
+
+ li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    color: white;
+ }
+
+ .iconsul {
+     margin-left: -2.4rem;
+     margin-top: -0.7rem;
+ }
+
+
+
+ .navTitle {
+     background-color: rgb(56, 62, 69);
+     padding: 0.1px;
+     width: 18%;
+ }
+
+ .mainNav {
+    font-family: 'Tajawal', sans-serif;
+    color: rgba(255, 255, 255, 0.831);
+    margin-left: 1rem;
+    margin-bottom: 8px;
+ }
+
+ .nav {
+    color: rgb(164, 163, 163);
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+
+ }
+
+ .navLink {
+    text-decoration: none;
+    color: rgb(164, 163, 163);
+
+ }
+
+ 
+
+ .ulNav {
+     margin-left: -1.3rem;
+ }
+
+ .iconNav {
+     margin-right: 10px;
+     font-size: 1.3rem;
+     
+ }
+
+ .bodyRight {
+     background-color:rgb(243, 243, 243) ;
+     margin-left: 15rem;
+     margin-top: -30rem;
+     border-radius: 0.3rem;
+     margin-right: 1.5rem;
+     font-family: arial, sans-serif;
+     min-height: 80vh;
+     padding: 1em;
+ }

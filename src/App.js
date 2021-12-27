@@ -7,6 +7,9 @@ import Login from "./components/Login";
 import VerifiedAccount from "./components/VerifiedAccount";
 import PatientHome from "./components/PatientHome";
 import DoctorHome from "./components/DoctorHome";
+import NewPatient from "./components/NewPatient";
+import DoctorHeader from "./components/DoctorHeader";
+
 
 const App = () => {
   return (
@@ -18,6 +21,10 @@ const App = () => {
      <Route exact path="/VerifiedAccount" element = {<VerifiedAccount />} />
      <Route exact path="/Patient" element = {<PatientHome />} />
      <Route exact path="/Doctor" element = {<DoctorHome />} />
+     <Route exact path="/AddPatient" element = {<NewPatient />} />
+     <Route exact path="/DoctorHeader" element = {<DoctorHeader />} />
+
+
 
    </Routes>
    </>

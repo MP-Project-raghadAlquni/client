@@ -1,0 +1,88 @@
+body {
+  background-color: white;
+}
+
+.patientInfo {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  font-family: arial, sans-serif;
+  margin-left: 1rem;
+}
+
+#FirstName,
+#LastName,
+#FileNumber,
+#age,
+#gender,
+#diabetesType {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.571);
+  border-radius: 0px;
+  width: 99%;
+}
+
+#age {
+  padding: 12px 1px;
+}
+
+#age::-webkit-input-placeholder {
+  position: absolute;
+  left: 18px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+#FirstName,
+#LastName {
+  width: 49%;
+  margin-right: 1%;
+}
+
+
+input[type=reset] {
+    background-color: rgb(255, 255, 255);
+  border: none;
+  margin-top: 2rem;
+  margin-left: 5px;
+  color: black;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+
+}
+
+.submitBtn {
+    /* 
+    padding: 0.8rem 1rem;
+    color: white;
+    font-size: 1rem; */
+  border: none;
+  background-image: linear-gradient(to right, #65d3d5a8 0%, #ab9ae582 51%, #65d3d5a8 100%);
+}
+
+.submitBtn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn1 {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 0.9rem 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  font-size: 1rem; 
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+  
+}
