@@ -49,23 +49,40 @@ input[type=reset] {
   border: none;
   margin-top: 2rem;
   margin-left: 5px;
-  padding: 0.8rem 1rem;
   color: black;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
--webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
--moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
-font-size: 1rem;
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+
 }
 
-input[type=submit] {
-    background-color: rgb(113, 191, 185);
-    border: none;
-    margin-top: 2rem;
-    margin-left: 5px;
+.submitBtn {
+    /* 
     padding: 0.8rem 1rem;
     color: white;
-    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
-  -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+    font-size: 1rem; */
+  border: none;
+  background-image: linear-gradient(to right, #65d3d5a8 0%, #ab9ae582 51%, #65d3d5a8 100%);
+}
+
+.submitBtn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn1 {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 0.9rem 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  font-size: 1rem; 
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.21);
   -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
-  font-size: 1rem;
+  
 }

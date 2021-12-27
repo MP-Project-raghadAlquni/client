@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import DoctorHeader from "../DoctorHeader";
 import axios from "axios";
-import { useDispatch , useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
 const NewPatient = () => {
@@ -39,7 +39,7 @@ const NewPatient = () => {
             const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/patientRegister`,
             { 
                 fileNumber: fileNumber,
-                fullName: fisrtName + lastName, 
+                fullName: fisrtName + " " + lastName, 
                 diabetesType: diabetesType, 
                 age: age, 
                 gender: gender,
@@ -51,9 +51,15 @@ const NewPatient = () => {
             });
             if (res.status === 201) {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'This email or username already have an account! log in!',
+                    title: `${fisrtName} has been added as a new patient`,
+                    width: 600,
+                    padding: '3em',
+                    color: '##000000',
+                    background: '#fff ',
+                    backdrop: `
+                      rgba(121, 186, 190,0.1)
+                      left top
+                      no-repeat`
                   })
                 }
     } catch (error) {
@@ -64,8 +70,11 @@ const NewPatient = () => {
 
 
 
-  return <>
-      <DoctorHeader />
+  return (
+       <>
+    <DoctorHeader />
+  {state.Login.token ? (
+  <>
       <div className="newPatient">
       <form
               className="input"
@@ -92,30 +101,33 @@ const NewPatient = () => {
            <div className="diabetesTypeSelect1">
       <select id="diabetesType" name="diabetesType" onChange={(e) => setDiabetesType(e.target.value)}
               required>
-      <option value="0"> --Diabetes Type-- </option>
-      <option value="1"> TYPE 1 </option>
-      <option value="2"> TYPE 2 </option>
+      <option > --Diabetes Type-- </option>
+      <option value="TYPE 1"> TYPE 1 </option>
+      <option value="TYPE 2"> TYPE 2 </option>
       </select>
       </div>
       <div className="genderSelect1">
       <select id="gender" name="gender" onChange={(e) => setGender(e.target.value)}
               required>
-      <option value="0"> --Gender-- </option>
-      <option value="1"> Male </option>
-      <option value="2"> Female </option>
+      <option> --Gender-- </option>
+      <option value="Male"> Male </option>
+      <option value="Female"> Female </option>
       </select>
       </div>
 
-      <input type = "submit" value = "Submit"/>
+      <input className="btn1 submitBtn" type = "submit" value = "Submit"/>
       <input type = "reset" value = "Cancel"/>
 
            </div>
 
            </aside>
           </form>
-
       </div>
-  </>;
+      </>
+  ) : null
+  } 
+  </>
+  )
 };
 
 export default NewPatient;
