@@ -9,6 +9,8 @@ import PatientHome from "./components/PatientHome";
 import DoctorHome from "./components/DoctorHome";
 import NewPatient from "./components/NewPatient";
 import DoctorHeader from "./components/DoctorHeader";
+import DoctorSchedule from "./components/DoctorSchedule";
+import Patients from "./components/Patients";
 
 
 const App = () => {
@@ -23,6 +25,8 @@ const App = () => {
      <Route exact path="/Doctor" element = {<DoctorHome />} />
      <Route exact path="/AddPatient" element = {<NewPatient />} />
      <Route exact path="/DoctorHeader" element = {<DoctorHeader />} />
+     <Route exact path="/DoctorSchedule" element = {<DoctorSchedule />} />
+     <Route exact path="/AllPatients" element = {<Patients />} />
 
 
 

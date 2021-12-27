@@ -13,7 +13,7 @@ import {Helmet} from "react-helmet";
 import { BsPerson } from "react-icons/bs";
 
 
-const DoctorHeader = () => {
+const PatientHeader = () => {
   return (
   <>
 <Helmet>
@@ -26,7 +26,7 @@ const DoctorHeader = () => {
        <div className="publicProfile"></div>
        <img id="avatar" src={Avatar}  alt="avatar" height={80}/>
        <div className="welcomeName">
-       <h4 id="welcome"> Welcome <br /> <span id="name"> Dr. Anoud </span> </h4>
+       <h4 id="welcome"> Welcome <br /> <span id="name"> Anoud </span> </h4>
        <div className="icons">
          <ul className="iconsul">
            <li id="profile"><BsPersonCircle /></li>
@@ -63,4 +63,4 @@ const DoctorHeader = () => {
   );
 };
 
-export default DoctorHeader;
+export default PatientHeader;
