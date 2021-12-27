@@ -14,7 +14,6 @@ import { IoIosPaper } from "react-icons/io";
 import { CgDanger } from "react-icons/cg";
 import { BiBarChartSquare } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
-import { BsPerson } from "react-icons/bs";
 import {Helmet} from "react-helmet";
 import DoctorHeader from "../DoctorHeader";
 
@@ -135,12 +134,6 @@ return (
       </div>
       </div>
       </aside>
-
-      <div className="AddBtn"> 
-      <button className="clicker" tabindex="1" > + </button>
-      <button className="hiddendiv"> <Link className="navLink" to="/AddPatient"> <BsPerson  id="iconBtnPatient" /></Link></button>
-
-      </div>
   </>
       )
     })

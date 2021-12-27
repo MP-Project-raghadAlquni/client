@@ -101,7 +101,7 @@ const NewPatient = () => {
            <div className="diabetesTypeSelect1">
       <select id="diabetesType" name="diabetesType" onChange={(e) => setDiabetesType(e.target.value)}
               required>
-      <option > --Diabetes Type-- </option>
+      <option value="none" selected disabled hidden> --Diabetes Type-- </option>
       <option value="TYPE 1"> TYPE 1 </option>
       <option value="TYPE 2"> TYPE 2 </option>
       </select>
@@ -109,15 +109,15 @@ const NewPatient = () => {
       <div className="genderSelect1">
       <select id="gender" name="gender" onChange={(e) => setGender(e.target.value)}
               required>
-      <option> --Gender-- </option>
+      <option value="none" selected disabled hidden> --Gender-- </option>
       <option value="Male"> Male </option>
       <option value="Female"> Female </option>
       </select>
       </div>
-
+      <div className="Btns">
       <input className="btn1 submitBtn" type = "submit" value = "Submit"/>
-      <input type = "reset" value = "Cancel"/>
-
+      <input type = "reset" value = "CANCEL"/>
+      </div>
            </div>
 
            </aside>
