@@ -10,6 +10,7 @@ import { IoPersonAddSharp } from "react-icons/io5";
 import { BsCalendarCheck } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import {Helmet} from "react-helmet";
+import { BsPerson } from "react-icons/bs";
 
 
 const DoctorHeader = () => {
@@ -49,6 +50,12 @@ const DoctorHeader = () => {
            <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
            </ul>
          </aside>
+
+         <div className="AddBtn"> 
+      <button className="clicker" tabindex="1" > + </button>
+      <button className="hiddendiv"> <Link className="navLink" to="/AddPatient"> <BsPerson  id="iconBtnPatient" /></Link></button>
+
+      </div>
          
            </div>
            </div>
