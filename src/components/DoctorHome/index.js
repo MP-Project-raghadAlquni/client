@@ -14,9 +14,14 @@ import { IoIosPaper } from "react-icons/io";
 import { CgDanger } from "react-icons/cg";
 import { BiBarChartSquare } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
+import { BsPerson } from "react-icons/bs";
+import {Helmet} from "react-helmet";
+import DoctorHeader from "../DoctorHeader";
 
 
 const DoctorHome = () => {
+
+
 const [newReadings, setNewReadings] = useState([]);
 const [patients, setPatients] = useState([]);
 const [numberReadings, setNumberReadings] = useState([]);
@@ -74,45 +79,15 @@ const getallverifiedPatient = async () => {
 
 
 return (
+  
   <>
+
   {newReadings.length && (
     <>
     {newReadings.map((readings) => {
       return (
         <>
-       
-  <div className="banner">
-  <div className="header">
-  <div className="leftSide">
-  {/* <img src = {Logo2} alt="LOGO" height={100}/> */}
-  <div className="publicProfile"></div>
-  <img id="avatar" src={Avatar}  alt="avatar" height={80}/>
-  <div className="welcomeName">
-  <h4 id="welcome"> Welcome <br /> <span id="name"> Dr. Anoud </span> </h4>
-  <div className="icons">
-    <ul className="iconsul">
-      <li id="profile"><BsPersonCircle /></li>
-      <li id="chat"><BsChatFill /></li>
-      <li id="logout"><IoIosLogOut /></li>
-    </ul>
-  </div>
-  </div>
-    </div>
-  </div>
-
-  <div className="body">
-    <aside className="bodyLeft">
-      <div className="navTitle">
-        <p className="mainNav"> MAIN NAVIGATION </p>
-      </div>
-      <ul className="ulNav"> 
-      <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Doctor">Home</Link> </li>
-    
-      <li className="nav"> <IoPersonAddSharp className="iconNav"/> Patients </li>
-      <li className="nav"> <BsCalendarCheck className="iconNav"/> Appointments </li>
-      <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
-      </ul>
-    </aside>
+    <DoctorHeader />
     <aside className="bodyRight">
       <div className="insideBody">
       <h2 className="bodyHomeh2"> Home </h2>
@@ -162,10 +137,10 @@ return (
       </aside>
 
       <div className="AddBtn"> 
-      <button className="Add"> + </button>
+      <button className="clicker" tabindex="1" > + </button>
+      <button className="hiddendiv"> <Link className="navLink" to="/AddPatient"> <BsPerson  id="iconBtnPatient" /></Link></button>
+
       </div>
-  </div>
-  </div>
   </>
       )
     })
