@@ -1,7 +1,7 @@
 const initialState = {
-    role: "",
+    // role: "",
     token: "",
-    id: "",
+    // id: "",
   };
 
 
@@ -18,13 +18,18 @@ const signIn = (state = initialState, action) => {
           return { role, token, id };
 
         case "LOGOUT":
-          // localStorage.removeItem("token");
+          localStorage.removeItem("token");
           // localStorage.removeItem("role");
           // localStorage.removeItem("userId");
           return payload;
           
         default:
-         return state;
+          const localToken = localStorage.getItem("token");
+          if(localToken) {
+            return {
+              token: localToken,
+            }
+          }
       }
     }
     

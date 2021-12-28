@@ -1,0 +1,46 @@
+.allPatientsInfo {
+    display: flex;
+    
+
+}
+
+.allPatientsInfo:hover {
+    cursor: pointer;
+}
+
+.patientInfor {
+    height: 100px;
+    margin: 15px;
+    padding: 50px;
+    transition: 0.5s ease;
+    display: inline;
+    background-color: white;
+    width: 25%;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.03);
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.03);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.03);}
+
+.allPatientsInfo div:hover {
+    transform: scale(1.04) perspective(0.1px);
+  }
+
+  .patientInfor div:hover {
+    transform: none;
+  }
+
+.ProfileImg {
+width: 30%;
+  height:100%;
+  margin-left: -2rem;
+  position:relative ;
+  top: -23px;
+  border: 1px solid black;
+}
+
+.content {
+    height: 15%;
+    margin-left: 5rem;
+    position:relative ;
+    top: -145px;
+    font-size: 0.7rem;
+}

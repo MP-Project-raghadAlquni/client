@@ -78,9 +78,10 @@ const getallverifiedPatient = async () => {
 
 
 return (
+  <>
+    {state.Login.token ? (
   
   <>
-
   {newReadings.length && (
     <>
     {newReadings.map((readings) => {
@@ -140,6 +141,9 @@ return (
     }
   </>
   )}
+  </>
+    ) : ""
+  }
   </>
   )
 };
