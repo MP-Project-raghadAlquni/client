@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 import "./style.css";
 import { useSelector } from "react-redux";
@@ -47,6 +48,7 @@ const Patients = () => {
             <>
               {patients.length && (
                 <>
+                <div id="allPatients">
                   {patients.map((patient) => {
                     console.log(patient);
                     return (
@@ -62,21 +64,22 @@ const Patients = () => {
                             src={patient.avatar}
                             alt="patientImg"
                           />
+                          <BiDotsHorizontalRounded className="GotoPatient"/>
+
                         </div>
                         <div className= "content">
-                            <p className="contentPara"> fullName: {patient.fullName} </p>
-                            <p className="contentPara"> fileNumber: {patient.fileNumber} </p>
-                            <p className="contentPara"> diabetesType: {patient.diabetesType} </p>
-                            <p className="contentPara"> age: {patient.age} </p>
-                            {/* <p> doctor: {patient.doctor.fullName} </p> */}
-                            <p className="contentPara"> phoneNumber: {patient.phoneNumber} </p>
-                            <p className="contentPara"> gender: {patient.gender} </p>
+                            <h1 className="contentPara FUname"> {patient.fullName} </h1>
+                            <p className="fN"> {patient.fileNumber} </p>
+                            <p className="contentPara">{patient.diabetesType} </p>
+                            <p className="contentPara">{patient.gender} , {patient.age} years old </p>
+                            <p className="contentPara"> P: {patient.phoneNumber} </p>
                             </div>
                           </div>
                         </div>
                       </div>
                     );
                   })}
+                  </div>
                 </>
               )}
             </>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
@@ -11,9 +11,23 @@ import { BsCalendarCheck } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import {Helmet} from "react-helmet";
 import { BsPerson } from "react-icons/bs";
+import { userLogout } from "./../../reducers/loginn";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const DoctorHeader = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+const state = useSelector((state) => {
+  return state
+});
+
+const logout = () => {
+  dispatch(userLogout({ token: "" }));
+  navigate("/");
+};
+
   return (
   <>
 <Helmet>
@@ -31,7 +45,7 @@ const DoctorHeader = () => {
          <ul className="iconsul">
            <li id="profile"><BsPersonCircle /></li>
            <li id="chat"><BsChatFill /></li>
-           <li id="logout"><IoIosLogOut /></li>
+           <li id="logout"><IoIosLogOut onClick={logout} /></li>
          </ul>
        </div>
        </div>

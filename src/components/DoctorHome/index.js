@@ -27,11 +27,6 @@ const [numberReadings, setNumberReadings] = useState([]);
 const [apppointment, setApppointment] = useState([]);
 
 
-
-const state = useSelector((state) => {
-  return state
-});
-
 useEffect(() => {
   getNewReadings()
 })
@@ -76,6 +71,9 @@ const getallverifiedPatient = async () => {
   setPatients(patients.data.length)
 }
 
+const state = useSelector((state) => {
+  return state;
+});
 
 return (
   <>
