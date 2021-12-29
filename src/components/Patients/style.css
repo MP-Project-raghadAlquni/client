@@ -1,0 +1,89 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Oswald&family=Playfair+Display&family=Roboto:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond&family=Jost:wght@200&family=M+PLUS+1p:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Oswald:wght@200&family=Playfair+Display&family=Roboto:wght@300&family=Source+Sans+Pro:wght@200&family=Tajawal:wght@300&display=swap');
+
+#allPatients {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.allPatientsInfo {
+    display: flex;
+    
+
+}
+
+.allPatientsInfo:hover {
+    cursor: pointer;
+}
+
+.patientInfor {
+    height: 70px;
+    margin: 15px;
+    padding: 45px;
+    transition: 0.5s ease;
+    display: inline;
+    background-color: white;
+    width: 200%;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.03);
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.03);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.03);}
+
+.allPatientsInfo div:hover {
+    transform: scale(1.04) perspective(0.1px);
+  }
+
+  .patientInfor div:hover {
+    transform: none;
+  }
+
+.ProfileImg {
+  width: 30%;
+  margin-left: -2rem;
+  position:relative ;
+  top: -28px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+.content {
+    height: 15%;
+    margin-left: 3rem;
+    position:relative ;
+    top: -105px;
+    font-size: 0.7rem;
+    line-height: 0.5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.fN {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.728)
+
+}
+
+.contentPara {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.728)
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.FUname {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  color: rgba(0, 0, 0, 0.728)
+
+}
+
+.GotoPatient {
+  font-size: 1.4rem;
+  position:relative ;
+    top: -70px;
+    left: 190px;
+    color: rgba(0, 0, 0, 0.728) 
+}

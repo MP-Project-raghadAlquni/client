@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
@@ -7,27 +7,13 @@ import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck } from "react-icons/bs";
+import { BsCalendarCheck, BsPeopleFill } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import {Helmet} from "react-helmet";
 import { BsPerson } from "react-icons/bs";
-import { userLogout } from "./../../reducers/loginn";
-import { useDispatch, useSelector } from "react-redux";
 
 
-const DoctorHeader = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-const state = useSelector((state) => {
-  return state
-});
-
-const logout = () => {
-  dispatch(userLogout({ token: "" }));
-  navigate("/");
-};
-
+const PatientHeader = () => {
   return (
   <>
 <Helmet>
@@ -40,12 +26,12 @@ const logout = () => {
        <div className="publicProfile"></div>
        <img id="avatar" src={Avatar}  alt="avatar" height={80}/>
        <div className="welcomeName">
-       <h4 id="welcome"> Welcome <br /> <span id="name"> Dr. Anoud </span> </h4>
+       <h4 id="welcome"> Welcome <br /> <span id="name"> Anoud </span> </h4>
        <div className="icons">
          <ul className="iconsul">
            <li id="profile"><BsPersonCircle /></li>
            <li id="chat"><BsChatFill /></li>
-           <li id="logout"><IoIosLogOut onClick={logout} /></li>
+           <li id="logout"><IoIosLogOut /></li>
          </ul>
        </div>
        </div>
@@ -58,18 +44,18 @@ const logout = () => {
              <p className="mainNav"> MAIN NAVIGATION </p>
            </div>
            <ul className="ulNav"> 
-           <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Doctor">Home</Link> </li>
-           <li className="nav"> <IoPersonAddSharp className="iconNav" /> <Link className="navLink" to="/AllPatients">Patients</Link> </li>
+           <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Patient">Home</Link> </li>
+           <li className="nav"> <BsPeopleFill className="iconNav" /> <Link className="navLink" to="/AllPatients">Doctors</Link> </li>
            <li className="nav"> <BsCalendarCheck className="iconNav"/> <Link className="navLink" to="/DoctorSchedule">Appointments</Link> </li>
-           <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
+           <li className="nav"> <IoIosPaper className="iconNav"/> All Readings </li>
            </ul>
          </aside>
 
-         <div className="AddBtn"> 
+         {/* <div className="AddBtn"> 
       <button className="clicker" tabindex="1" > + </button>
       <button className="hiddendiv"> <Link className="navLink" to="/AddPatient"> <BsPerson  id="iconBtnPatient" /></Link></button>
 
-      </div>
+      </div> */}
          
            </div>
            </div>
@@ -77,4 +63,4 @@ const logout = () => {
   );
 };
 
-export default DoctorHeader;
+export default PatientHeader;

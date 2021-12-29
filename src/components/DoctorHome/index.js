@@ -27,22 +27,17 @@ const [numberReadings, setNumberReadings] = useState([]);
 const [apppointment, setApppointment] = useState([]);
 
 
-
-const state = useSelector((state) => {
-  return state
-});
-
 useEffect(() => {
   getNewReadings()
-})
+}, [])
 
 useEffect(() => {
   getDoctorAppointments()
-})
+}, [])
 
 useEffect(() => {
   getallverifiedPatient()
-})
+}, [])
 
 const getNewReadings = async () => {
   const users = await axios.get(`${process.env.REACT_APP_BASE_URL}/newReadings`, 
@@ -76,11 +71,15 @@ const getallverifiedPatient = async () => {
   setPatients(patients.data.length)
 }
 
+const state = useSelector((state) => {
+  return state;
+});
 
 return (
+  <>
+    {state.Login.token ? (
   
   <>
-
   {newReadings.length && (
     <>
     {newReadings.map((readings) => {
@@ -140,6 +139,9 @@ return (
     }
   </>
   )}
+  </>
+    ) : ""
+  }
   </>
   )
 };

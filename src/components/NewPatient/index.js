@@ -102,8 +102,8 @@ const NewPatient = () => {
       <select id="diabetesType" name="diabetesType" onChange={(e) => setDiabetesType(e.target.value)}
               required>
       <option value="none" selected disabled hidden> --Diabetes Type-- </option>
-      <option value="TYPE 1"> TYPE 1 </option>
-      <option value="TYPE 2"> TYPE 2 </option>
+      <option value="TYPE 1"> Type 1 </option>
+      <option value="TYPE 2"> Type 2 </option>
       </select>
       </div>
       <div className="genderSelect1">

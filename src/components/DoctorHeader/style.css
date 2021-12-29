@@ -76,6 +76,8 @@
  .iconNav {
      margin-right: 10px;
      font-size: 1.3rem;
+     position: relative;
+     top: 2px;
      
  }
 
@@ -90,83 +92,4 @@
      padding: 1em;
  }
 
- /* .clicker {
-    display:block;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    border: none;
-    margin-bottom: 1rem;
-    position: absolute;
-    right: 10px;
-    background-color: rgb(113, 191, 185);
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    outline:none;
-    cursor:pointer;
-} */
 
-.clicker {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: normal;
-    width:100%;
-    outline:none;
-    cursor:pointer;
-    margin-left: 2rem;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    border: none;
-    position: absolute;
-    right: 12px;
-    bottom: 15px;
-    background-color: rgb(113, 191, 185);
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.29);
--webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.29);
--moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.29);
-    }
-
-/* .hiddendiv {
-    display:block;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    border: none;
-    margin-bottom: 1rem;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: rgb(113, 191, 185);
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; */
-
-    .hiddendiv {
-        /* display:none; */
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: bold;
-        letter-spacing: 1px;
-        margin-left: 5rem;
-        text-align: center;
-        color: white;
-        height: 45px;
-        width: 45px;
-        border-radius: 50%;
-        border: none;
-        position: absolute;
-        right: 22px;
-        bottom: 100px;
-        background-color: rgb(242, 156, 56);
-        font-size: 1.3rem;
-        box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
--webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
--moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
-}
-
-.clicker:hover + .hiddendiv{
-    display:block ;
-    }
