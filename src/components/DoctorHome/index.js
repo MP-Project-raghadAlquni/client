@@ -29,15 +29,15 @@ const [apppointment, setApppointment] = useState([]);
 
 useEffect(() => {
   getNewReadings()
-})
+}, [])
 
 useEffect(() => {
   getDoctorAppointments()
-})
+}, [])
 
 useEffect(() => {
   getallverifiedPatient()
-})
+}, [])
 
 const getNewReadings = async () => {
   const users = await axios.get(`${process.env.REACT_APP_BASE_URL}/newReadings`, 

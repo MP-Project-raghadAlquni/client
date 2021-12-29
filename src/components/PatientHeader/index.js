@@ -7,7 +7,7 @@ import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck } from "react-icons/bs";
+import { BsCalendarCheck, BsPeopleFill } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import {Helmet} from "react-helmet";
 import { BsPerson } from "react-icons/bs";
@@ -44,18 +44,18 @@ const PatientHeader = () => {
              <p className="mainNav"> MAIN NAVIGATION </p>
            </div>
            <ul className="ulNav"> 
-           <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Doctor">Home</Link> </li>
-           <li className="nav"> <IoPersonAddSharp className="iconNav" /> <Link className="navLink" to="/AllPatients">Patients</Link> </li>
+           <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Patient">Home</Link> </li>
+           <li className="nav"> <BsPeopleFill className="iconNav" /> <Link className="navLink" to="/AllPatients">Doctors</Link> </li>
            <li className="nav"> <BsCalendarCheck className="iconNav"/> <Link className="navLink" to="/DoctorSchedule">Appointments</Link> </li>
-           <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
+           <li className="nav"> <IoIosPaper className="iconNav"/> All Readings </li>
            </ul>
          </aside>
 
-         <div className="AddBtn"> 
+         {/* <div className="AddBtn"> 
       <button className="clicker" tabindex="1" > + </button>
       <button className="hiddendiv"> <Link className="navLink" to="/AddPatient"> <BsPerson  id="iconBtnPatient" /></Link></button>
 
-      </div>
+      </div> */}
          
            </div>
            </div>

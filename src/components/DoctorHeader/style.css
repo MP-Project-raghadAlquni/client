@@ -76,6 +76,8 @@
  .iconNav {
      margin-right: 10px;
      font-size: 1.3rem;
+     position: relative;
+     top: 2px;
      
  }
 

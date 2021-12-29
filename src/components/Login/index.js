@@ -97,7 +97,8 @@ const Login = () => {
           </div>
         ) : (
           <Home />
-        )}
+        )
+         }
       </div>
     </>
   );
