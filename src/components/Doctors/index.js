@@ -5,74 +5,68 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import "./style.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import DoctorHeader from "../DoctorHeader";
+import PatientHeader from "../PatientHeader";
 
 const Patients = () => {
   const navigate = useNavigate();
-  const [patients, setPatients] = useState("");
+  const [doctors, setDoctors] = useState("");
 
   useEffect(() => {
-    getallverifiedPatients();
+    getallAcceptedDoctors();
   }, []);
 
   const state = useSelector((state) => {
     return state;
   });
 
-  const getallverifiedPatients = async () => {
-    const allpatients = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/verfiedPatients`,
-      {
-        headers: {
-          Authorization: `Bearer ${state.Login.token}`,
-        },
-      }
-    );
-    setPatients(allpatients.data);
-    console.log(allpatients.data, "all");
+  const getallAcceptedDoctors= async () => {
+    const allDoctors = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/acceptedDoctors`);
+      setDoctors(allDoctors.data);
+    console.log(allDoctors.data, "all");
   };
 
   const onePaitent = (id) => {
     console.log(id);
-    navigate(`/OneProduct/${id}`);
+    navigate(`/OneDoctors/${id}`);
   };
 
   return (
     <>
-      <DoctorHeader />
+      <PatientHeader />
       <aside className="bodyRight">
         <div className="insideBody">
-          <h2 className="bodyHomeh2"> All Patients </h2>
+          <h2 className="bodyHomeh2"> Home </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {patients.length && (
+              {doctors.length && (
                 <>
                 <div id="allPatients">
-                  {patients.map((patient) => {
-                    console.log(patient);
+                  {doctors.map((doctor) => {
+                    console.log(doctor);
                     return (
-                      <div key={patient._id} className="allPatientsInfo">
+                      <div key={doctor._id} className="allPatientsInfo">
                         <div className="patientInfor">
                           <div
                             onClick={() => {
-                              onePaitent(patient._id);
+                              onePaitent(doctor._id);
                             }}>
                                 <div className="imgProfile">
                                 <img
                             className="ProfileImg"
-                            src={patient.avatar}
+                            src={doctor.avatar}
                             alt="patientImg"
                           />
                           <BiDotsHorizontalRounded className="GotoPatient"/>
 
                         </div>
                         <div className= "content">
-                            <h1 className="contentPara FUname"> {patient.fullName} </h1>
-                            <p className="fN"> {patient.fileNumber} </p>
-                            <p className="contentPara">{patient.diabetesType} </p>
-                            <p className="contentPara">{patient.gender} , {patient.age} years old </p>
-                            <p className="contentPara"> P: {patient.phoneNumber} </p>
+                            <h1 className="contentPara FUname"> {doctor.fullName} </h1>
+                            <p className="fN"> {doctor.fileNumber} </p>
+                            <p className="contentPara">{doctor.fileNumber} </p>
+                            <p className="contentPara">{doctor.gender} , {doctor.age} years old </p>
+                            <p className="contentPara"> P: {doctor.phoneNumber} </p>
                             </div>
                           </div>
                         </div>

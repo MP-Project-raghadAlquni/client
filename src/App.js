@@ -12,6 +12,7 @@ import DoctorHeader from "./components/DoctorHeader";
 import DoctorSchedule from "./components/DoctorSchedule";
 import Patients from "./components/Patients";
 import AddAppointment from "./components/AddAppointment";
+import Doctors from "./components/Doctors";
 
 
 const App = () => {
@@ -29,6 +30,8 @@ const App = () => {
         <Route exact path="/DoctorSchedule" element={<DoctorSchedule />} />
         <Route exact path="/AllPatients" element={<Patients />} />
         <Route exact path="/AddAppointment" element={<AddAppointment />} />
+        <Route exact path="/AllDoctors" element={<Doctors />} />
+
 
       </Routes>
     </>

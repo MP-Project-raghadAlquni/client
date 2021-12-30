@@ -92,4 +92,6 @@
      padding: 1em;
  }
 
-
+ .iconsli {
+     cursor: pointer;
+ }
