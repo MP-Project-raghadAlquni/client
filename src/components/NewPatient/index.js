@@ -49,7 +49,7 @@ const NewPatient = () => {
                     Authorization: `Bearer ${state.Login.token}`,
                   },
             });
-            if (res.status === 201) {
+            if (res.status === 200) {
                 Swal.fire({
                     title: `${fisrtName} has been added as a new patient`,
                     width: 600,

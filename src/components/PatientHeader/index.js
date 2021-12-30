@@ -1,5 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { userLogout } from "./../../reducers/loginn";
+import { useDispatch, useSelector } from "react-redux";
+
 import "./style.css";
 import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
@@ -14,6 +17,13 @@ import { BsPerson } from "react-icons/bs";
 
 
 const PatientHeader = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch(userLogout({ token: "" }));
+    navigate("/");
+  };
   return (
   <>
 <Helmet>
@@ -29,9 +39,9 @@ const PatientHeader = () => {
        <h4 id="welcome"> Welcome <br /> <span id="name"> Anoud </span> </h4>
        <div className="icons">
          <ul className="iconsul">
-           <li id="profile"><BsPersonCircle /></li>
-           <li id="chat"><BsChatFill /></li>
-           <li id="logout"><IoIosLogOut /></li>
+           <li className="iconsli"><BsPersonCircle /></li>
+           <li className="iconsli"><BsChatFill /></li>
+           <li className="iconsli"><IoIosLogOut onClick={logout} /></li>
          </ul>
        </div>
        </div>
@@ -45,7 +55,7 @@ const PatientHeader = () => {
            </div>
            <ul className="ulNav"> 
            <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Patient">Home</Link> </li>
-           <li className="nav"> <BsPeopleFill className="iconNav" /> <Link className="navLink" to="/AllPatients">Doctors</Link> </li>
+           <li className="nav"> <BsPeopleFill className="iconNav" /> <Link className="navLink" to="/AllDoctors">Doctors</Link> </li>
            <li className="nav"> <BsCalendarCheck className="iconNav"/> <Link className="navLink" to="/DoctorSchedule">Appointments</Link> </li>
            <li className="nav"> <IoIosPaper className="iconNav"/> All Readings </li>
            </ul>

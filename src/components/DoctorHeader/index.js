@@ -43,9 +43,9 @@ const logout = () => {
        <h4 id="welcome"> Welcome <br /> <span id="name"> Dr. Anoud </span> </h4>
        <div className="icons">
          <ul className="iconsul">
-           <li id="profile"><BsPersonCircle /></li>
-           <li id="chat"><BsChatFill /></li>
-           <li id="logout"><IoIosLogOut onClick={logout} /></li>
+           <li className="iconsli"><BsPersonCircle /></li>
+           <li className="iconsli"><BsChatFill /></li>
+           <li className="iconsli"><IoIosLogOut onClick={logout} /></li>
          </ul>
        </div>
        </div>
