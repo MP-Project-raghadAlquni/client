@@ -7,10 +7,10 @@ import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck } from "react-icons/bs";
+import { BsCalendarCheck , BsCalendarPlus } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import {Helmet} from "react-helmet";
-import { BsPerson } from "react-icons/bs";
+import { BsPeopleFill } from "react-icons/bs";
 import { userLogout } from "./../../reducers/loginn";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -67,7 +67,9 @@ const logout = () => {
 
          <div className="AddBtn"> 
       <button className="clicker" tabindex="1" > + </button>
-      <button className="hiddendiv"> <Link className="navLink" to="/AddPatient"> <BsPerson  id="iconBtnPatient" /></Link></button>
+      <button className="hiddenAddPatient"> <Link className="navLink" to="/AddPatient"> <BsPeopleFill  id="iconBtnPatient" /></Link></button>
+      <button className="hiddenAddAppointment"> <Link className="navLink" to="/AddPatient"> <BsCalendarPlus  id="iconBtnPatient" /></Link></button>
+
 
       </div>
          

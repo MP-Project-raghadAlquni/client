@@ -25,8 +25,7 @@ const NewPatient = () => {
             headers: {
               Authorization: `Bearer ${state.Login.token}`,
             },
-          }
-          );
+          });
           setPatients(verifiedPatients.data);
         } catch (error) {
           console.log(error);
@@ -36,7 +35,7 @@ const NewPatient = () => {
 
     const addPatient = async () => {
         try {
-            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/patientRegister`,
+            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/patientRegister`, 
             { 
                 fileNumber: fileNumber,
                 fullName: fisrtName + " " + lastName, 
@@ -49,7 +48,7 @@ const NewPatient = () => {
                     Authorization: `Bearer ${state.Login.token}`,
                   },
             });
-            if (res.status === 200) {
+            if (res.status === 201) {
                 Swal.fire({
                     title: `${fisrtName} has been added as a new patient`,
                     width: 600,

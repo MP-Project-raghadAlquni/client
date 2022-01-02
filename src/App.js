@@ -13,6 +13,10 @@ import DoctorSchedule from "./components/DoctorSchedule";
 import Patients from "./components/Patients";
 import AddAppointment from "./components/AddAppointment";
 import Doctors from "./components/Doctors";
+import OnePatient from "./components/OnePatient";
+import DossesPage from "./components/DossesPage";
+
+
 
 
 const App = () => {
@@ -29,9 +33,10 @@ const App = () => {
         <Route exact path="/DoctorHeader" element={<DoctorHeader />} />
         <Route exact path="/DoctorSchedule" element={<DoctorSchedule />} />
         <Route exact path="/AllPatients" element={<Patients />} />
-        <Route exact path="/AddAppointment" element={<AddAppointment />} />
+        <Route exact path="/AddAppointment/:id" element={<AddAppointment />} />
         <Route exact path="/AllDoctors" element={<Doctors />} />
-
+        <Route exact path="/Patients/:id" element={<OnePatient />} />
+        <Route exact path="/Dosses/:id" element={<DossesPage />} />
 
       </Routes>
     </>

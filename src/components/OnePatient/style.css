@@ -1,0 +1,27 @@
+.fNN {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.PattientName {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bodyHomeh5 {
+    margin-top: -0.80rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.h5 {
+    margin-top: 1rem;
+}
+
+.infoIcon {
+    position: relative;
+    top: 1.5px
+}
+
+.patientReadings {
+    background-color: white;
+}

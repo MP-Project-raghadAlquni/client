@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 import Moment from "react-moment";
 import { BsJournalPlus } from "react-icons/bs";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import { MdDone } from "react-icons/md";
+
 import Swal from "sweetalert2";
 
 var now = new Date();
@@ -79,15 +81,15 @@ const PatientHome = () => {
           },
         }
       );
+      getNewReadingsForUser(state.Login.token);
+
       if (readings.status === 201) {
         setMessage("Reading has been added");
-      } else if (readings.status === 404){
-        setMessage("");
-      }
+      } 
     } catch (error) {
       console.log(error);
+
     }
-    getNewReadingsForUser(state.Login.token);
   };
 
   const getNewReadingsForUser = async () => {
@@ -100,6 +102,7 @@ const PatientHome = () => {
       }
     );
     setNewReadings(readings.data);
+    
   };
 
   // edit Readings
@@ -136,10 +139,18 @@ const PatientHome = () => {
               no-repeat`
           })
         }
-        else {
-          
-        }
     } catch (error) {
+        Swal.fire({
+            title: `nooo`,
+            width: 600,
+            padding: '3em',
+            color: '##000000',
+            background: '#fff ',
+            backdrop: `
+              rgba(121, 186, 190,0.1)
+              left top
+              no-repeat`
+          })
       console.log(error);
     }
     getNewReadingsForUser(state.Login.token);
@@ -158,7 +169,7 @@ const PatientHome = () => {
 
               <div className="ReadingsTables">
                 <h3 id="tableTiltle"> New Readings </h3>
-
+                {message ? <div className="message">{message}</div> : ""}
                 <table className="table">
                   <tr>
                     <th className="danger"> Date </th>

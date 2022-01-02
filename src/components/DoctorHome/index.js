@@ -16,10 +16,16 @@ import { BiBarChartSquare } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
 import {Helmet} from "react-helmet";
 import DoctorHeader from "../DoctorHeader";
+import Home from "../Home";
+
 
 
 const DoctorHome = () => {
 
+
+const state = useSelector((state) => {
+  return state;
+});
 
 const [newReadings, setNewReadings] = useState([]);
 const [patients, setPatients] = useState([]);
@@ -71,21 +77,18 @@ const getallverifiedPatient = async () => {
   setPatients(patients.data.length)
 }
 
-const state = useSelector((state) => {
-  return state;
-});
-
 return (
   <>
+  <DoctorHeader />
     {state.Login.token ? (
-  
   <>
   {newReadings.length && (
     <>
     {newReadings.map((readings) => {
+       console.log(readings, "here");
       return (
         <>
-    <DoctorHeader />
+    
     <aside className="bodyRight">
       <div className="insideBody">
       <h2 className="bodyHomeh2"> Home </h2>
@@ -140,7 +143,9 @@ return (
   </>
   )}
   </>
-    ) : ""
+    ) : ( 
+      <Home />
+    )
   }
   </>
   )

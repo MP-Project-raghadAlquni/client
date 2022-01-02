@@ -34,7 +34,7 @@ const Patients = () => {
 
   const onePaitent = (id) => {
     console.log(id);
-    navigate(`/OneProduct/${id}`);
+    navigate(`/Patients/${id}`);
   };
 
   return (

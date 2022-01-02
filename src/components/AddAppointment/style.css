@@ -1,4 +1,4 @@
-@import url("https://cdn.syncfusion.com/ej2/material.css");
+/* @import url("https://cdn.syncfusion.com/ej2/material.css");
 h2,
 p,
 .calendar,
@@ -21,7 +21,7 @@ fieldset {
   height: 33px;
   padding: 0px;
   /* margin: p; */
-  margin-left: 508px;
+  /* margin-left: 508px;
   color: grey;
   border: 1px solid grey;
 }
@@ -95,4 +95,9 @@ div > button {
 .grid-item18 > button:hover {
   color: black;
   cursor: pointer;
-}
+} */ 
+/* 
+* {
+  background-color: rgba(128, 128, 128, 0.571);
+} */
+
