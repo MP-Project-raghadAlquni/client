@@ -110,6 +110,8 @@ useEffect(() => {
 };
 
 
+
+
   return (
 
     
@@ -122,11 +124,6 @@ useEffect(() => {
         <div className="insideBody">
           <h2 className="bodyHomeh2"> Add new Appointment </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
-          {/* <h5 className="PattientName">
-            {" "}  - {" "}
-            File Number: {" ", Patient Name: {" "}
-            {onePaitent.fullName}onePaitent.fileNumber} {" "}
-          </h5> */}
         
           <form className="input"
               onSubmit={(e) => {
@@ -134,8 +131,6 @@ useEffect(() => {
                 addAppointment(e) }
               }>
          
-            
-
               <div className="patientInfo">
                
            <input type="text" id="FirstName" name="FirstName" className="InputInfo" value={onePaitent.fullName}/>

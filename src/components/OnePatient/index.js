@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Home from "../Home";
 import Moment from "react-moment";
+import DoctorHeader from "../DoctorHeader";
 
 
 const OnePatient = () => {
@@ -80,7 +81,10 @@ const Paitent = (id) => {
     navigate(`/AddAppointment/${id}`);
   };
 
-
+  const dosses = (id) => {
+    console.log(id);
+    navigate(`/Dosses/${id}`);
+  };
 
 
 const logout = () => {
@@ -97,42 +101,8 @@ const logout = () => {
   <style>{'body { background-color: rgb(49, 55, 61); }'}</style>
 </Helmet>
        
-       <div className="banner">
-       <div className="header">
-       <div className="leftSide">
-       <div className="publicProfile"></div>
-       <img id="avatar" src={Avatar}  alt="avatar" height={80}/>
-       <div className="welcomeName">
-       <h4 id="welcome"> Welcome <br /> <span id="name"> Dr. Anoud </span> </h4>
-       <div className="icons">
-         <ul className="iconsul">
-           <li className="iconsli"><BsPersonCircle /></li>
-           <li className="iconsli"><BsChatFill /></li>
-           <li className="iconsli"><IoIosLogOut onClick={logout} /></li>
-         </ul>
-       </div>
-       </div>
-         </div>
-       </div>
-     
-       <div className="body">
-         <aside className="bodyLeft">
-           <div className="navTitle">
-             <p className="mainNav"> MAIN NAVIGATION </p>
-           </div>
-           <ul className="ulNav"> 
-           <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Doctor">Home</Link> </li>
-           <li className="nav"> <IoPersonAddSharp className="iconNav" /> <Link className="navLink" to="/AllPatients">Patients</Link> </li>
-           <li className="nav"> <BsCalendarCheck className="iconNav"/> <Link className="navLink" to="/DoctorSchedule">Appointments</Link> </li>
-           <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
-           </ul>
-         </aside>
-
-         <div className="AddBtn"> 
-      <button className="clicker" tabindex="1" > + </button>
-      <button className="hiddenAddPatient"> <Link className="navLink" to="/AddPatient"> <BsPeopleFill  id="iconBtnPatient" /></Link></button>
-      <button className="hiddenAddAppointment"> <Link className="navLink" to="/AddPatient"> <BsCalendarPlus  id="iconBtnPatient" /></Link></button>
-
+  
+<DoctorHeader />
       <aside className="bodyRight">
             <div className="insideBody">
               <h2 className="PattientName"> {onePaitent.fullName} - <span className="fNN"> {onePaitent.fileNumber} </span> </h2>
@@ -235,14 +205,16 @@ const logout = () => {
     </div>
     <button  onClick={() => {
                               Paitent(onePaitent._id)} }> new Appointment </button>
+    <button  onClick={() => {
+                              dosses(onePaitent._id)} }> Dosses </button>
     </div>
 
     
     </aside>
-      </div>
+      {/* </div> */}
          
-           </div>
-           </div>
+           {/* </div> */}
+           {/* </div> */}
  
     </>
     ) : ( 

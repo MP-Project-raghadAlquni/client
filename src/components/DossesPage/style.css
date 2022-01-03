@@ -1,0 +1,22 @@
+#Insuline1,
+#d1Dosses,
+#Insuline2,
+#d2Dosses
+ {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.571);
+  border-radius: 0px;
+  width: 99%;
+}
+
+#Insuline1,
+#d1Dosses {
+    width: 49%;
+  margin-right: 1%;
+}
+
+#Insuline2,
+#d2Dosses {
+    width: 49%;
+  margin-right: 1%;
+}

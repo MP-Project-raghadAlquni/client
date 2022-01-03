@@ -1,20 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./style.css";
+// import "./style.css";
+import Background from '../images/doctorbacck.jpeg';
 
+var sectionStyle = {
+   width: "100%",
+   height: "100vh",
+   backgroundPosition: 'center',
+   backgroundSize: 'cover',
+   backgroundRepeat: 'no-repeat',
+   backgroundImage: `url(${ Background })`
+ };
 
  
 const Signup = () => {
 
 
   return (
+
+<>
+{/* <section style={ sectionStyle }> */}
    <div className="signup">
-      <form>
+      <form id="signup">
       <label for="fileNumber"> File Number : </label>
       <input type="text" id="FileNumber" name="FileNumber" placeholder="Your file number .." />
 
       <label for="fullName"> Full Nme : </label>
-      <input type="text" id="fullName" name="fullName" placeholder="Your full name .." />
+      <input type="text" id="fullNamesign" name="fullName" placeholder="Your full name .." />
 
       <label for="email"> Email : </label>
       <input type="text" id="email" name="email" placeholder="Your email .." />
@@ -99,8 +111,11 @@ const Signup = () => {
     </div>
     </div>
       </form>
-  </div>
+  </div> 
+  {/* </section> */}
+  </>
   )
+  
 };
 
 export default Signup;

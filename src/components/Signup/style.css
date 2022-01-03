@@ -1,4 +1,8 @@
-input[type=text], select  {
+body {
+    background-image: url("../images/doctorbacck.jpeg") 
+}
+
+/* input[type=text], select  {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -11,8 +15,9 @@ input[type=text], select  {
 
 .signup {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    /* background-color: #f2f2f2; */
+    /* padding: 10px;
+    margin: 5rem;
 }
 
 input[type=file] {
@@ -35,5 +40,19 @@ input[type=password] {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: white;
+/*  */
+
+
+
+#signup {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: black;
 }
 
+
+#fullNamesign {
+    margin-top: 10rem;
+    background-color: black;
+
+}

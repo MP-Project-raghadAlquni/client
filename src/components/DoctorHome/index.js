@@ -53,6 +53,7 @@ const getNewReadings = async () => {
     }
   })
   setNewReadings(users.data)
+  console.log(users);
   setNumberReadings(users.data.length)
 }
 
@@ -88,7 +89,6 @@ return (
        console.log(readings, "here");
       return (
         <>
-    
     <aside className="bodyRight">
       <div className="insideBody">
       <h2 className="bodyHomeh2"> Home </h2>
