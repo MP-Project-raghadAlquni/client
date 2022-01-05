@@ -5,6 +5,7 @@ import { userLogin } from "./../../reducers/loginn";
 import "./style.css";
 import axios from "axios";
 import Home from "../Home";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -40,14 +41,15 @@ const Login = () => {
       } else if (res.data.result.role.role === "doctor") {
         navigate("/Doctor");
       } else if (res.data.result.role.role === "admin") {
-        navigate("/DoctorHome");
+        navigate("/AdminPage");
       }
     }
   };
 
   return (
     <>
-    
+   
+
       <div className="body">
         {!state.Login.token ? (
           <div className="login">
@@ -91,7 +93,7 @@ const Login = () => {
                 <p className="doctorSignup">
                   {" "}
                   As a Doctor, you don't have a membership? Click{" "}
-                  <Link to="/Signup">Here</Link> to Register{" "}
+                  <Link to="/signup1">Here</Link> to Register{" "}
                 </p>
               </div>
             </form>

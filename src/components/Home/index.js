@@ -14,7 +14,7 @@ const Home = () => {
       <ul>
       <li className="logo"><img className="logo" src={logo} alt="logo" height={70}/></li>
       <li className={splitLocation[1] === "" ? "active" : ""}>
-          <Link to="/Signup">New Doctor</Link>{" "}
+          <Link to="/signup1">New Doctor</Link>{" "}
       </li>
       </ul>
       </div>
