@@ -59,11 +59,11 @@ return (
       <DashboaredHeader />
       <aside className="bodyRight">
         <div className="insideBody">
-          <h2 className="bodyHomeh2"> All Users </h2>
+          <h2 className="bodyHomeh2"> Pending Doctors </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {allPendings.length && (
+              {allPendings.length ? (
                 <>
                 <div id="allPatients">
                   {allPendings.map((user) => {
@@ -73,7 +73,7 @@ return (
                         <div className="patientInfor">
                           <div
                             onClick={() => {
-                              PendingDoctor(allPendings._id);
+                              PendingDoctor(user._id);
                             }}>
                                 <div className="imgProfile">
                                 <img
@@ -102,7 +102,15 @@ return (
                   })}
                   </div>
                 </>
-              )}
+              ) : (
+                <>
+                <CgDanger className="ifNotIcon" />
+                <p className="IfNot"> there`s no Pendings Doctor!! </p>
+                
+                </>
+              )
+              
+              }
             </>
           ) : (
             ""

@@ -1,0 +1,105 @@
+.login {
+    background-color: white;
+    position: relative;
+    top: 15rem;
+    left: 3.3rem;
+    padding: 0rem 2rem;
+    width: 40%;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+}
+
+.LoginForm {
+    position: relative;
+    top: 6rem;
+    left: 20rem;
+    width: 50%;
+    text-align: center;
+}
+
+.toVerified {
+    width: 41%;
+    text-align: center;
+    position: relative;
+    top: -120px;
+}
+
+.BlockInput {
+    display: block;
+    margin-top: 2rem;
+}
+
+#Email {
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.605);
+    position: relative;
+    left: 2rem;
+    width: 70%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+#password {
+    margin-top: 2rem;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.605);
+    margin-bottom: 1rem;
+    position: relative;
+    left: 2rem;
+    width: 70%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.vl2 {
+    border-left: 1px solid rgba(0, 0, 0, 0.214);
+    height: 310px;
+    position: absolute;
+    top: 35px;
+    left: 45%;
+  }
+
+  #loginButton {
+      margin-top: 2rem;
+      border-radius: 1rem;
+      border: none;
+      padding: 1rem;
+  }
+
+  #loginButton:hover {
+      background-color: gray;
+  }
+
+  .patientVerified {
+      font-size: 1.3rem;
+      position: relative;
+      top: -1rem
+  }
+
+  .doctorSignup {
+     font-size: 1.3rem;
+     position: relative;
+     top: 1rem;
+
+  }
+
+  .hrr {
+     background-color: rgba(128, 128, 128, 0.077);
+     width: 100%;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.214);
+     position: relative;
+     top: 0rem
+  }
+
+  .a {
+      color: rgba(128, 128, 128, 0.625);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.536);
+  }
+
+  .a:hover {
+      color: gray;
+      border-bottom: 1px solid gray
+  }

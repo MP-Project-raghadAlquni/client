@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator";
 import { Link, useNavigate } from "react-router-dom";
-
+import SignupHeader from "../SignupHeader"
 import axios from "axios";
 
 // creating functional component ans getting props from app.js and destucturing them
@@ -29,48 +29,25 @@ const Step2 = ({ nextStep, handleFormData, values }) => {
   };
 
 
-//   const signUp = async () => {
-//     try {
-//         const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/signup`, 
-//         { 
-//             fileNumber: handleFormData.fileNumber,
-//             password: handleFormData.password,
-//             email: handleFormData.email, 
-//             internationalId: handleFormData.internationalId, 
-//             age: handleFormData.age, 
-//             gender: handleFormData.gender,
-//             certificates: handleFormData.certificates,
-//             letter: handleFormData.letter,
-//             license: handleFormData.license,
-//             fullName: handleFormData.fullName,
-
-
-//         });
-//         if (res.status === 201) {
-//             navigate("/");
-//             }
-// } catch (error) {
-//     console.log(error);
-//   }
-// }
-
   return (
-    <div>
-      <Card style={{ marginTop: 100 }}>
+    <div className="DivForm">
+     <SignupHeader />
+     <h1 className="FormTitle"> Doctor's Register </h1>
+      <Card style={{ margin: "-10px 30rem" , width: "30%"}}>
         <Card.Body>
           <Form onSubmit={submitFormData}>
           <Form.Group className="mb-3">
-              <Form.Label>Full Name</Form.Label>
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
+              <Form.Control 
+                style={{ borderBottom: error ? "2px solid red" : "" }}
                 name="fullName"
+                className="FormInfo"
                 defaultValue={values.fullName}
                 type="text"
-                placeholder="Your Full Name ..."
+                placeholder="Full Name ..."
                 onChange={handleFormData("fullName")}
               />
               {error ? (
-                <Form.Text style={{ color: "red" }}>
+                <Form.Text style={{ color: "red", marginLeft:"5rem"}}>
                   This is a required field
                 </Form.Text>
               ) : (
@@ -78,17 +55,17 @@ const Step2 = ({ nextStep, handleFormData, values }) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>File Number</Form.Label>
               <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
+                style={{ borderBottom: error ? "2px solid red" : "" }}
                 name="fileNumber"
+                className="FormInfo"
                 defaultValue={values.fileNumber}
                 type="text"
-                placeholder="Your File Number ..."
+                placeholder= "File Number ..."
                 onChange={handleFormData("fileNumber")}
               />
               {error ? (
-                <Form.Text style={{ color: "red" }}>
+                <Form.Text style={{ color: "red", marginLeft:"5rem" }}>
                   This is a required field
                 </Form.Text>
               ) : (
@@ -96,17 +73,17 @@ const Step2 = ({ nextStep, handleFormData, values }) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
               <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
+                style={{ borderBottom: error ? "2px solid red" : "" }}
                 name="email"
+                className="FormInfo"
                 defaultValue={values.email}
-                type="text"
-                placeholder="email"
+                type="email"
+                placeholder="Email ..."
                 onChange={handleFormData("email")}
               />
               {error ? (
-                <Form.Text style={{ color: "red" }}>
+                <Form.Text style={{ color: "red" , marginLeft:"5rem" }}>
                   This is a required field
                 </Form.Text>
               ) : (
@@ -114,27 +91,32 @@ const Step2 = ({ nextStep, handleFormData, values }) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
               <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
+                style={{borderBottom: error ? "2px solid red" : "" }}
                 name="password"
                 defaultValue={values.password}
                 type="password"
-                placeholder="password"
+                className="FormInfo"
+                placeholder="Password ..."
                 onChange={handleFormData("password")}
               />
               {error ? (
-                <Form.Text style={{ color: "red" }}>
+                <Form.Text style={{ color: "red", marginLeft:"5rem"}}>
                   This is a required field
                 </Form.Text>
               ) : (
                 ""
               )}
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className="SignBtn">
               Continue
             </Button>
           </Form>
+          <div class="vl"></div>
+          <aside className="ToLogin">
+            <p className="ParaLogin">
+            Already have an account?  <span className="Parasize"> Login <Link className="Link" to = "/login"> here </Link> </span> </p>
+          </aside>
         </Card.Body>
       </Card>
     </div>

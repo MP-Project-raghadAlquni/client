@@ -1,11 +1,10 @@
-// import "./App.css";
+import "./style.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-
+// import DOCTOORbackground from "../images/DOCTOORbackground"
 import Final from "./Final";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
-
 function Step1() {
   //state for steps
   const [step, setstep] = useState(1);
@@ -60,7 +59,10 @@ function Step1() {
     // case 1 to show stepOne form and passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
     case 1:
       return (
-        <div className="App">
+
+  
+      
+        <div>
           <Container>
             <Row>
               <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
@@ -95,6 +97,7 @@ function Step1() {
             </Row>
           </Container>
         </div>
+        
       );
     // default case to show nothing
     default:
@@ -102,6 +105,8 @@ function Step1() {
         <div className="App">
             <h1> hi </h1>
         </div>
+
+    
       );
   }
 }

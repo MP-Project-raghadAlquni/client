@@ -4,6 +4,7 @@ import validator from "validator";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { storage } from "./../Fairbase";
+import SignupHeader from "../SignupHeader"
 
 // creating functional component ans getting props from app.js and destucturing them
 const Final = ({ nextStep, handleFormData, prevStep, values }) => {
@@ -165,7 +166,10 @@ const handleLicense = (e) => {
 
   return (
     <>
-      <Card style={{ marginTop: 100 }}>
+    <div className="DivForm1">
+     <SignupHeader />
+     <h1 className="FormTitle1"> Doctor's Register 3 </h1>
+      <Card style={{  margin: "-10px 30rem" , width: "30%" }}>
         <Card.Body>
           <Form
             className="input"
@@ -175,10 +179,11 @@ const handleLicense = (e) => {
             }}
           >
             <Form.Group className="mb-3">
-              <Form.Label>license</Form.Label>
+              <Form.Label className="FL">license</Form.Label>
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="file"
+                className="FormInfo"
                 placeholder="license"
                 onChange={handleLicense}
               />
@@ -191,10 +196,11 @@ const handleLicense = (e) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>letter</Form.Label>
+              <Form.Label className="FL">letter</Form.Label>
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="file"
+                className="FormInfo"
                 placeholder="letter"
                 onChange={handleLetter}
               />
@@ -207,10 +213,11 @@ const handleLicense = (e) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>certificate 1</Form.Label>
+              <Form.Label className="FL">certificate</Form.Label>
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="file"
+                className="FormInfo"
                 placeholder="certificates"
                 onChange={handleCertificates}
               />
@@ -225,10 +232,11 @@ const handleLicense = (e) => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>certificate 2</Form.Label>
+              <Form.Label className="FL">certificate 2</Form.Label>
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="file"
+                className="FormInfo"
                 placeholder="certificates"
                 onChange={handleCertificates}
               />
@@ -242,15 +250,21 @@ const handleLicense = (e) => {
             </Form.Group>
 
             <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button variant="primary" onClick={prevStep}>
+              <Button variant="primary" onClick={prevStep} className="SignBtn3">
                 Previous
               </Button>
 
-              <input className="btn1 submitBtn" type="submit" value="Submit" />
+              <input className="btn1 submitBtn" type="submit" value="Submit" className="SignBtn3"/>
             </div>
           </Form>
+          <div class="vl"></div>
+          <aside className="ToLogin11">
+            <p className="ParaLogin1">
+            Already have an account?  <span className="Parasize"> Login <Link className="Link" to = "/login"> here </Link> </span> </p>
+          </aside>
         </Card.Body>
       </Card>
+      </div>
     </>
   );
 };

@@ -1,4 +1,91 @@
-.license {
-    height: 40%;
-    width: 90%;
+.licenseSide {
+    background-color: white;
+    padding: 0.3rem 1.5rem 1rem;
+    margin-top: 1rem;
 }
+
+
+.insideBody1 {
+    background-color: white;
+    padding: 0.3rem 1.5rem;
+}
+
+hr {
+    color: rgb(0, 0, 0);
+}
+
+.TitleInfo {
+    text-decoration: underline;
+}
+
+.bodyHomeh1 {
+    margin-left: 1rem;
+    /* font-family:serif; */
+    font-size: 1.4rem;
+    
+}
+
+.male {
+    position: absolute;
+    left: 0.3rem;
+}
+
+
+
+.TitleInfo {
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.RightInfo {
+    position: absolute;
+    top: 13.5rem;
+    right: 43rem;
+}
+
+.RightInfo2 {
+    position: absolute;
+    top: 13.5rem;
+    right: 20rem;
+}
+.text {
+    font-size: 1.3rem;
+}
+
+.infoIcon {
+    position: relative;
+    top: 5px;
+}
+
+.ArrowIcon {
+    position: relative;
+    top: 4px;
+}
+
+.rejectAcceptBtn {
+    flex: 1 1 auto;
+  margin: 40px 10px 0px;
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+  border-radius: 1rem;
+}
+
+.Accept {
+    /* background-image: linear-gradient(to right, #65d3d5a8 0%, #ab9ae582 51%, #65d3d5a8 100%); */
+    background-color: #65d3d5a8;
+    margin-left: 26rem;
+
+}
+
+
+.reject {
+    background-color: white;
+}
+

@@ -1,12 +1,11 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import "./style.css";
+import "./style.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
-import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import { IoPersonAddSharp } from "react-icons/io5";
@@ -22,6 +21,8 @@ import Home from "../Home";
 
 
 const DashboaredPatients = () => {
+  const [allPatient, setAllPatient] = useState([]);
+  const navigate = useNavigate();
 
     useEffect(() => {
         getallPatient();
@@ -32,14 +33,9 @@ const state = useSelector((state) => {
   return state;
 });
 
-const [newReadings, setNewReadings] = useState([]);
-const [allPatient, setAllPatient] = useState([]);
-const [numberReadings, setNumberReadings] = useState([]);
-const [apppointment, setApppointment] = useState([]);
-
 
 const getallPatient = async () => {
-    const allPatients= await axios.get(
+    const allPatients = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/getAllPatientsverifiedToAdmin`,
       {
         headers: {
@@ -51,16 +47,22 @@ const getallPatient = async () => {
     console.log(allPatients.data, "all");
   };
 
+
+  const onePaitent = (id) => {
+    console.log(id);
+    navigate(`/Patient/${id}`);
+  };
+
 return (
     <>
       <DashboaredHeader />
       <aside className="bodyRight">
         <div className="insideBody">
-          <h2 className="bodyHomeh2"> All Users </h2>
+          <h2 className="bodyHomeh2"> All Patient </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {allPatient.length && (
+              {allPatient.length ? (
                 <>
                 <div id="allPatients">
                   {allPatient.map((user) => {
@@ -68,10 +70,10 @@ return (
                     return (
                       <div key={user._id} className="allPatientsInfo">
                         <div className="patientInfor">
-                          {/* <div
+                          <div
                             onClick={() => {
-                              onePaitent(patient._id);
-                            }}> */}
+                              onePaitent(user._id);
+                            }}>
                                 <div className="imgProfile">
                                 <img
                             className="ProfileImg"
@@ -91,14 +93,22 @@ return (
                             <p className="contentPara">  </p>
 
                             </div>
-                          {/* </div> */}
+                          </div>
                         </div>
                       </div>
                     );
                   })}
                   </div>
                 </>
-              )}
+              ) : (
+                <>
+                <CgDanger className="ifNotIcon" />
+                <p className="IfNot"> there`s no Patients verified yet !! </p>
+                
+                </>
+              )
+              
+              }
             </>
           ) : (
             ""
