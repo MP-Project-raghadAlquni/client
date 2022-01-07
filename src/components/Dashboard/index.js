@@ -65,7 +65,7 @@ return (
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {user.length && (
+              {user.length ? (
                 <>
                 <div id="allPatients">
                   {user.map((user) => {
@@ -103,7 +103,15 @@ return (
                   })}
                   </div>
                 </>
-              )}
+              ) : (
+                <>
+                <CgDanger className="ifNotIcon" />
+                <p className="IfNot"> there`s no Users yet !! </p>
+                
+                </>
+              )
+              
+              }
             </>
           ) : (
             ""

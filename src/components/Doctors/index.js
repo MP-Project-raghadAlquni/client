@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { CgDanger } from "react-icons/cg";
 
 import "./style.css";
 import { useSelector } from "react-redux";
@@ -40,7 +41,7 @@ const Patients = () => {
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {doctors.length && (
+              {doctors.length ? (
                 <>
                 <div id="allPatients">
                   {doctors.map((doctor) => {
@@ -75,7 +76,15 @@ const Patients = () => {
                   })}
                   </div>
                 </>
-              )}
+              ) : (
+                <>
+                <CgDanger className="ifNotIcon" />
+                <p className="IfNot"> there`s no Doctors !! </p>
+                
+                </>
+              )
+              
+              }
             </>
           ) : (
             ""

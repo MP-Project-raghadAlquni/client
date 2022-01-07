@@ -1,40 +1,176 @@
-input[type=text], select  {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+.FormInfo {
+ border: 0;
+ border-bottom: 1px solid gray;
+ width: 120%;
+ position: relative;
+ left: 1rem;
+ margin-top: 4rem;
+}
 
+.FormTitle {
+    position: relative;
+    top: 50px;
+    left: 31.4rem;
+    margin-bottom: 3rem;
+}
 
-.signup {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+.FormTitle1 {
+    position: relative;
+    top: 50px;
+    left: 25rem;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+}
+.DivForm {
+    height: 62vh;
+    background-color: white;
+    width: 60%;
+    margin-top: 10rem;
+    border-radius: 2rem;
+    /* border-top-left-radius: 0;
+    border-bottom-left-radius: 0; */
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+    border: 3px solid rgba(185, 185, 199, 0.571);
+    position: absolute;
+    left: 5%;
+}
+ 
+.DivForm1 {
+    height: 62vh;
+    background-color: white;
     width: 50%;
+    margin-top: 10rem;
+    border-radius: 2rem;
+    /* border-top-left-radius: 0;
+    border-bottom-left-radius: 0; */
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+    border: 3px solid rgba(185, 185, 199, 0.571);
+    position: absolute;
+    left: 5%;
 }
 
 input[type=file] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 20%;
+    padding: 0px -5px; 
+    /* margin: 10px 0; */
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: none;
+    border-radius: 4px; 
     box-sizing: border-box;
+    position: absolute;
+    left: 16rem;
+    margin-left: 19rem;
     background-color: white;
 }
 
-input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: white;
+.SignBtn {
+    margin-top: 3rem;
+    margin-bottom: -10rem ;
+    position: relative;
+    left: 5rem;
+    border: none;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    /* background-color: rgba(69, 69, 174, 0.166); */
 }
+
+.SignBtn2 {
+    margin-top: 5rem;
+    margin-bottom: 10rem ;
+    position: relative;
+    left: 5rem;
+    border: none;
+    /* padding: 0rem; */
+    height: 3rem;
+    border-radius: 1rem;
+}
+
+.SignBtn3 {
+    margin-top: 7rem;
+    margin-bottom: 10rem ;
+    position: relative;
+    left: -3.5rem;
+    border: none;
+    padding: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    height: 3rem;
+    border-radius: 1rem;
+}
+.vl {
+    border-left: 1px solid rgba(0, 0, 0, 0.214);
+    height: 400px;
+    position: absolute;
+    top: 90px;
+    left: 45%;
+  }
+
+.ToLogin {
+    position: relative;
+    top: -20rem;
+    right: 25rem;
+    text-align: center;
+}
+
+.ParaLogin {
+    font-size: 2rem;
+    position: absolute;
+    left: -1%;
+    
+
+}
+
+.ParaLogin1 {
+
+    font-size: 2rem;
+    position: absolute;
+    bottom: 3%;
+    left: -6%;
+}
+
+.ToLogin11{
+    position: relative;
+    top: -15rem;
+    right: 25rem;
+    text-align: center;
+}
+
+.ToLogin4 {
+    position: relative;
+    top: -26rem;
+    right: 25rem;
+    text-align: center;
+}
+.Link {
+    /* text-decoration: none; */
+    color: black;
+    font-size: 1.6rem;
+}
+
+.Parasize {
+    font-size: 1.6rem;
+}
+
+.FormInfo00 {
+    margin-bottom: 3rem;
+}
+
+.FL {
+    /* position: relative;
+    top: 4rem;
+    left: 8rem; */
+    /* margin-left:30rem; */
+    position: relative;
+    left:-5rem ;
+    top: 62px;
+    font-size: 1.3rem;
+    margin:0;
+}
+
 

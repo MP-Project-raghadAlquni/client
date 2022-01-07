@@ -3,6 +3,7 @@ import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import SignupHeader from "../SignupHeader"
 
 
 // creating functional component ans getting props from app.js and destucturing them
@@ -29,15 +30,20 @@ const Step3 = ({ nextStep, handleFormData, prevStep, values }) => {
 
   return (
     <>
-      <Card style={{ marginTop: 100 }}>
+     <div className="DivForm">
+     <SignupHeader />
+     <h1 className="FormTitle"> Doctor's Register 2 </h1>
+      <Card style={{ margin: "-10px 30rem" , width: "30%" }}>
         <Card.Body>
         <Form onSubmit={submitFormData}>
             <Form.Group className="mb-3">
-              <Form.Label>international Id</Form.Label>
+              {/* <Form.Label>international Id</Form.Label> */}
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="text"
-                placeholder="Age"
+                defaultValue={values.internationalId}
+                className="FormInfo"
+                placeholder="international ID"
                 onChange={handleFormData("internationalId")}
               />
               {error ? (
@@ -49,10 +55,12 @@ const Step3 = ({ nextStep, handleFormData, prevStep, values }) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>age</Form.Label>
+              {/* <Form.Label>age</Form.Label> */}
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="text"
+                className="FormInfo"
+                defaultValue={values.age}
                 placeholder="age"
                 onChange={handleFormData("age")}
               />
@@ -64,14 +72,20 @@ const Step3 = ({ nextStep, handleFormData, prevStep, values }) => {
                 ""
               )}
             </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>gender</Form.Label>
-              <Form.Control
+            {/* <Form.Group className="mb-3"> */}
+              {/* <Form.Label>gender</Form.Label> */}
+              <select
                 style={{ border: error ? "2px solid red" : "" }}
-                type="text"
+                // type="text"
+                defaultValue={values.gender}
+                className="FormInfo"
                 placeholder="gender"
                 onChange={handleFormData("gender")}
-              />
+              >
+                <option value="none" selected disabled hidden> --Gender-- </option>
+      <option value="Male"> Male </option>
+      <option value="Female"> Female </option>
+      </select>
               {error ? (
                 <Form.Text style={{ color: "red" }}>
                   This is a required field
@@ -79,19 +93,26 @@ const Step3 = ({ nextStep, handleFormData, prevStep, values }) => {
               ) : (
                 ""
               )}
-            </Form.Group>
+            {/* </Form.Group> */}
             <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button variant="primary" onClick={prevStep}>
-                Previous
+              
+              <Button variant="primary" onClick={prevStep}  className="SignBtn2">
+                {"<"} Previous
               </Button>
 
-              <Button variant="primary" type="submit">
-              Continue
+              <Button variant="primary" type="submit" className="SignBtn2">
+              Continue {">"}
             </Button>
             </div>
           </Form>
+          <div class="vl"></div>
+          <aside className="ToLogin4">
+            <p className="ParaLogin">
+            Already have an account?  <span className="Parasize"> Login <Link className="Link" to = "/login"> here </Link> </span> </p>
+          </aside>
         </Card.Body>
       </Card>
+      </div>
     </>
   );
 };

@@ -6,6 +6,8 @@ import "./style.css";
 import axios from "axios";
 import Home from "../Home";
 import { Helmet } from "react-helmet";
+import LoginBack from "../LoginBack"
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,7 +51,7 @@ const Login = () => {
   return (
     <>
    
-
+   <LoginBack />
       <div className="body">
         {!state.Login.token ? (
           <div className="login">
@@ -60,40 +62,45 @@ const Login = () => {
                 login(e);
               }}
             >
-              <label for="email"> Email: </label>
+              <aside className="LoginForm">
+                <h1> Login </h1>
+              {/* <label for="email"> Email: </label> */}
               <input
                 type="text"
                 id="Email"
                 name="Email"
-                placeholder="Your email .."
+                className="BlockInput"
+                placeholder="Email .."
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
 
-              <label for="password"> Password : </label>
+              {/* <label for="password"> Password : </label> */}
               <input
                 type="password"
                 id="password"
+                className="BlockInput"
                 name="password"
-                placeholder="Your password .."
+                placeholder="Password .."
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <input id="loginButton" type="submit" value="Submit" />
-
+              <input id="loginButton" type="submit" value="Login" />
+              </aside>
+              <div class="vl2"></div>
               <div className="toVerified">
                 <p className="patientVerified">
                   {" "}
-                  As a Patient, You don't verified your account? Click{" "}
-                  <Link to="/VerifiedAccount">Here</Link>
+                  As a Patient, You don't verified your account? Verified {" "}
+                  <Link to="/VerifiedAccount" className="a">here</Link>
                 </p>
-              </div>
+             
 
-              <div>
+<div className="hrr"> </div>          
                 <p className="doctorSignup">
                   {" "}
-                  As a Doctor, you don't have a membership? Click{" "}
-                  <Link to="/signup1">Here</Link> to Register{" "}
+                  As a Doctor, you don't have a membership? Register{" "}
+                  <Link to="/signup1" className="a">here</Link> {" "}
                 </p>
               </div>
             </form>

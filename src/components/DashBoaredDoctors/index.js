@@ -22,6 +22,8 @@ import Home from "../Home";
 
 
 const DashboaredDoctors = () => {
+  const navigate = useNavigate();
+  const [allDoctors, setAllDoctors] = useState([]);
 
     useEffect(() => {
         getallDoctor();
@@ -32,10 +34,7 @@ const state = useSelector((state) => {
   return state;
 });
 
-const [newReadings, setNewReadings] = useState([]);
-const [allDoctors, setAllDoctors] = useState([]);
-const [numberReadings, setNumberReadings] = useState([]);
-const [apppointment, setApppointment] = useState([]);
+
 
 
 const getallDoctor = async () => {
@@ -51,16 +50,21 @@ const getallDoctor = async () => {
     console.log(allDoctor.data, "all");
   };
 
+  const oneDoctor = (id) => {
+    console.log(id);
+    navigate(`/Doctor/${id}`);
+  };
+
 return (
     <>
       <DashboaredHeader />
       <aside className="bodyRight">
         <div className="insideBody">
-          <h2 className="bodyHomeh2"> All Users </h2>
+          <h2 className="bodyHomeh2"> All Doctors </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {allDoctors.length && (
+              {allDoctors.length ? (
                 <>
                 <div id="allPatients">
                   {allDoctors.map((user) => {
@@ -68,10 +72,10 @@ return (
                     return (
                       <div key={user._id} className="allPatientsInfo">
                         <div className="patientInfor">
-                          {/* <div
+                          <div
                             onClick={() => {
-                              onePaitent(patient._id);
-                            }}> */}
+                              oneDoctor(user._id);
+                            }}>
                                 <div className="imgProfile">
                                 <img
                             className="ProfileImg"
@@ -91,14 +95,22 @@ return (
                             <p className="contentPara">  </p>
 
                             </div>
-                          {/* </div> */}
+                          </div>
                         </div>
                       </div>
                     );
                   })}
                   </div>
                 </>
-              )}
+              ) : (
+                <>
+                <CgDanger className="ifNotIcon" />
+                <p className="IfNot"> there`s no Doctors Accepted yet !! </p>
+                
+                </>
+              )
+              
+              }
             </>
           ) : (
             ""

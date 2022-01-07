@@ -24,6 +24,10 @@ import DashboaredDoctors from "./components/DashBoaredDoctors";
 import DashboaredPatients from "./components/DashBoaredPatients";
 import DashboaredPendingDoctor from "./components/DashboaredPendingDoctor";
 import PendingDoctor from "./components/PendingDoctor";
+import DashboreadOnePatient from "./components/DashboreadOnePatient";
+import DashBoreadOneDoctor from "./components/DashBoreadOneDoctor";
+import SignupHeader from "./components/SignupHeader";
+
 
 
 
@@ -55,6 +59,9 @@ const App = () => {
         <Route exact path="/DashboaredPatients" element={<DashboaredPatients />} />
         <Route exact path="/DashboaredPendings" element={<DashboaredPendingDoctor />} />
         <Route exact path="/PendingDoctor/:id" element={<PendingDoctor />} />
+        <Route exact path="/Patient/:id" element={<DashboreadOnePatient />} />
+        <Route exact path="/Doctor/:id" element={<DashBoreadOneDoctor />} />
+        <Route exact path="/SignUpHeader" element={<SignupHeader />} />
 
       </Routes>
     </>
