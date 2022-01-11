@@ -92,7 +92,6 @@ useEffect(() => {
     
   };
 
-
   const onePatientINFO = async () => {
     try {
     const patients = await axios.get(
@@ -110,20 +109,15 @@ useEffect(() => {
 };
 
 
-
-
   return (
-
-    
     <>
-   
         {state.Login.token ? (
-<>
+        <>
       <DoctorHeader />
       <aside className="bodyRight">
         <div className="insideBody">
           <h2 className="bodyHomeh2"> Add new Appointment </h2>
-          <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
+          <h5 className="bodyHomeh5"> Welcome to Readings App </h5>
         
           <form className="input"
               onSubmit={(e) => {

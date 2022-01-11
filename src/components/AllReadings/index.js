@@ -44,7 +44,6 @@ const PatientHome = () => {
   const [updateBeforeDinner, setUpdateBeforeDinner] = useState("");
   const [updateAfterDinner, setUpdateAfterDinner] = useState("");
   const [updateBeforeSleep, setUpdateBeforeSleep] = useState("");
-  const [updateReadingsDate, setUpdateReadingsDate] = useState("");
 
   const [message, setMessage] = useState("");
   const [show, setShow] = useState(false);
@@ -139,7 +138,7 @@ const PatientHome = () => {
       }
     } catch (error) {
       Swal.fire({
-        title: `Reading edit is "DONE"`,
+        title: `nooo`,
         width: 600,
         padding: "3em",
         color: "##000000",
@@ -188,7 +187,7 @@ const PatientHome = () => {
                         return (
                           <>
                             <tr>
-                              <td width="7%" className="sup">
+                              <td className="sup">
                                 {" "}
                                 <Moment format="DD - MM">
                                   {readings.date}
@@ -267,7 +266,7 @@ const PatientHome = () => {
                               <td>
                                 {" "}
                                 <button
-                                  className="EditBtn10"
+                                  className="EditBtn"
                                   onClick={() => {
                                     editReadings(readings._id);
                                   }}
@@ -402,4 +401,4 @@ const PatientHome = () => {
   );
 };
 
-export default PatientHome;
+export default AllReadings;

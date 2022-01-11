@@ -3,6 +3,7 @@ import "./style.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import LoginBack from '../LoginBack'
 
 const VerifiedAccount = () => {
   const navigate = useNavigate();
@@ -39,7 +40,9 @@ const VerifiedAccount = () => {
 
   return (
   <>
-    <div className="login">
+   <LoginBack />
+    <div className="VERIFIED">
+    <aside className="verfidForm">
   <form
     className="input"
     onSubmit={(e) => {
@@ -47,40 +50,50 @@ const VerifiedAccount = () => {
       completePatientReagistser(e);
     }}
   >
+      <h1 className="verTitle"> Verified Account </h1>
 
-<label for="FileNumber"> File Number : </label>
+{/* <label for="FileNumber"> File Number : </label> */}
     <input
       type="text"
-      id="FileNumber"
+      className="inputVerified"
+      id="FileNumberVerified"
       name="FileNumber"
-      placeholder="Your File Number .."
+      placeholder="File Number .."
       onChange={(e) => setFileNumber(e.target.value)}
       required
     />
 
-    <label for="email"> Email: </label>
+    {/* <label for="email"> Email: </label> */}
     <input
       type="text"
-      id="Email"
+      id="EmailVerified"
       name="Email"
+      className="inputVerified"
       placeholder="Your email .."
       onChange={(e) => setEmail(e.target.value)}
       required
     />
 
-    <label for="password"> Password : </label>
+    {/* <label for="password"> Password : </label> */}
     <input
       type="password"
-      id="password"
+      id="passwordVerified"
       name="password"
+      className="inputVerified"
       placeholder="Your password .."
       onChange={(e) => setPassword(e.target.value)}
       required
     />
-    <input id="loginButton" type="submit" value="Submit" />
+
+    <input id="verifiedButton" type="submit" value="Verified" />
     </form>
-    Account verified? Go to Login
-    <Link to="/login">Here</Link> 
+    </aside>
+    <div class="vl3"></div>
+
+    
+    <p className="ver"> Account verified? Login 
+    <Link className="a" to="/login"> Here</Link> </p>
+
     </div>
     
     </>

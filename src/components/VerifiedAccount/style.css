@@ -1,0 +1,62 @@
+.VERIFIED {
+    background-color: white;
+    position: relative;
+    top: 15rem;
+    left: 3.3rem;
+    padding: 0rem 2rem;
+    width: 40%;
+    height: 40vh;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.20);
+}
+
+.inputVerified {
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.605);
+    margin-bottom: 1rem;
+    width: 70%;
+    position: relative;
+    top: 10px;
+    left: 40px;
+    margin-bottom: 1.5rem;
+}
+
+
+#verifiedButton {
+      border-radius: 1rem;
+      border: none;
+      padding: 1rem;
+      position:absolute ;
+      top: 130%;
+      right: 42%;
+}
+
+.ver {
+    font-size: 1.5rem;
+    width: 40%;
+    text-align: center;
+}
+
+.vl3 {
+    border-left: 1px solid rgba(0, 0, 0, 0.214);
+    height: 290px;
+    position: absolute;
+    top: 35px;
+    left: 45%;
+  }
+
+  .verTitle {
+      position: relative;
+      top: 100%;
+  }
+
+  .verfidForm {
+    position: relative;
+    top: 4.5rem;
+    left: 20rem;
+    width: 50%;
+    text-align: center;
+  }

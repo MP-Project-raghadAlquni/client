@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import "./style.css";
+// import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
-import DoctorHeader from "../DoctorHeader";
+import PatientHeader from "../PatientHeader";
 import axios from "axios";
 import Moment from "react-moment";
 
-const DoctorSchedule = () => {
-  const [appointment, setAppointment] = useState([]);
+const PatientSchedule = () => {
+  const [patientAppointment, setPatientAppointment] = useState([]);
 
   const state = useSelector((state) => {
     return state;
@@ -15,20 +15,20 @@ const DoctorSchedule = () => {
 
 
   useEffect(() => {
-    AllAppintment();
+    AllPatientAppintment();
   }, []);
 
-  const AllAppintment = async () => {
+  const AllPatientAppintment = async () => {
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/doctorAppointments`,
+        `${process.env.REACT_APP_BASE_URL}/appointments`,
         {
           headers: {
             Authorization: `Bearer ${state.Login.token}`,
           },
         }
       );
-      setAppointment(res.data);
+      setPatientAppointment(res.data);
       console.log(res.data, "appointment");
     } catch (error) {
       console.log(error);
@@ -38,18 +38,18 @@ const DoctorSchedule = () => {
 
   return (
     <>
-  <DoctorHeader />
+  <PatientHeader />
   <aside className="bodyRight">
   <div className="insideBody">
-  <h2 className="bodyHomeh2"> Doctor Schedule </h2>
+  <h2 className="bodyHomeh2"> Patient Appointment </h2>
       <h5 className="bodyHomeh5">  Welcome to Readings App</h5>
     <div className="ReadingsTables">
         <h3 id="tableTiltle"> All Appointments </h3>
         <table className="table">
           <tr>
             <th className="danger">  </th>
-            <th className="title"> Patient Name </th>
-            <th className="title"> File Number </th>
+            {/* <th className="title"> Patient Name </th> */}
+            {/* <th className="title"> File Number </th> */}
             <th className="title"> Date </th>
             <th className="title"> Day </th>
             <th className="title"> Hour </th>
@@ -57,14 +57,14 @@ const DoctorSchedule = () => {
           </tr>
 
 
-          {appointment.map((appoin) => {
+          {patientAppointment.map((appoin) => {
                       console.log(appoin, "doss");
                       return (
                         <>
                         <tr>
                         <td> </td>
-            <td className="sup"> {appoin.forUser.fullName} </td>
-            <td className="sup"> {appoin.forUser.fileNumber} </td>
+            {/* <td className="sup"> {appoin.forUser.fullName} </td> */}
+            {/* <td className="sup"> {appoin.forUser.fileNumber} </td> */}
             <td className="sup">  <Moment format="DD/MM/yyy">
                                   {appoin.date}
                                 </Moment>{" "} </td>
@@ -86,4 +86,4 @@ const DoctorSchedule = () => {
   )
 };
 
-export default DoctorSchedule;
+export default PatientSchedule;
