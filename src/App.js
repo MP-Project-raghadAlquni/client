@@ -27,41 +27,54 @@ import PendingDoctor from "./components/PendingDoctor";
 import DashboreadOnePatient from "./components/DashboreadOnePatient";
 import DashBoreadOneDoctor from "./components/DashBoreadOneDoctor";
 import SignupHeader from "./components/SignupHeader";
-
-
-
-
+import VerifiedBack from "./components/VerifiedBack";
+import DoctorProfile from "./components/Profile/Doctor";
+import PatientProfile from "./components/Profile/Patient";
+import PatientSchedule from "./components/PatientAppointment";
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        {/* <Route exact path="/" element={<Home />} /> */}
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/VerifiedAccount" element={<VerifiedAccount />} />
-        <Route exact path="/Patient" element={<PatientHome />} />
-        <Route exact path="/Doctor" element={<DoctorHome />} />
+        <Route exact path="/Patient/:id" element={<PatientHome />} />
+        <Route exact path="/Doctor/:id" element={<DoctorHome />} />
         <Route exact path="/AddPatient" element={<NewPatient />} />
         <Route exact path="/DoctorHeader" element={<DoctorHeader />} />
         <Route exact path="/DoctorSchedule" element={<DoctorSchedule />} />
+        <Route exact path="/PatientSchedule" element={<PatientSchedule />} />
+
         <Route exact path="/AllPatients" element={<Patients />} />
         <Route exact path="/AddAppointment/:id" element={<AddAppointment />} />
         <Route exact path="/AllDoctors" element={<Doctors />} />
         <Route exact path="/Patients/:id" element={<OnePatient />} />
         <Route exact path="/Dosses/:id" element={<DossesPage />} />
-        <Route exact path="/signup1" element={<Step1 />} />
+        <Route exact path="/" element={<Step1 />} />
         <Route exact path="/signup2" element={<Step2 />} />
         <Route exact path="/final" element={<Final />} />
         <Route exact path="/AdminPage" element={<Dashboared />} />
         <Route exact path="/DashboaredHeader" element={<DashboaredHeader />} />
         <Route exact path="/DashboaredDoctor" element={<DashboaredDoctors />} />
-        <Route exact path="/DashboaredPatients" element={<DashboaredPatients />} />
-        <Route exact path="/DashboaredPendings" element={<DashboaredPendingDoctor />} />
+        <Route
+          exact
+          path="/DashboaredPatients"
+          element={<DashboaredPatients />}
+        />
+        <Route
+          exact
+          path="/DashboaredPendings"
+          element={<DashboaredPendingDoctor />}
+        />
         <Route exact path="/PendingDoctor/:id" element={<PendingDoctor />} />
         <Route exact path="/Patient/:id" element={<DashboreadOnePatient />} />
         <Route exact path="/Doctor/:id" element={<DashBoreadOneDoctor />} />
         <Route exact path="/SignUpHeader" element={<SignupHeader />} />
+        <Route exact path="/VerifiedBack" element={<VerifiedBack />} />
+        <Route exact path="/DoctorProfile/:id" element={<DoctorProfile />} />
+        <Route exact path="/PatientProfile/:id" element={<PatientProfile />} />
 
       </Routes>
     </>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, {useEffect,useState} from "react";
+import { Link, useNavigate , useParams} from "react-router-dom";
 import "./style.css";
 import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
@@ -13,20 +13,53 @@ import {Helmet} from "react-helmet";
 import { BsPeopleFill } from "react-icons/bs";
 import { userLogout } from "./../../reducers/loginn";
 import { useDispatch, useSelector } from "react-redux";
-
+import axios from "axios";
+import { BsFillPersonFill } from "react-icons/bs";
 
 const DoctorHeader = () => {
+  const id = useParams().id;
+  const [user, setUser] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+const [fullName, setfullName] = useState([])
 
 const state = useSelector((state) => {
   return state
 });
 
+
+
 const logout = () => {
+  
   dispatch(userLogout({ token: "" }));
   navigate("/");
 };
+
+
+useEffect(() => {
+  oneUserName()
+}, [])
+
+
+const oneUserName = async () => {
+  const docId = JSON.parse(localStorage.getItem("user"))._id
+
+  try {
+  const userNamme = await axios.get(
+    `${process.env.REACT_APP_BASE_URL}/users/${docId}`, {
+      headers: {
+          Authorization: `Bearer ${state.Login.token}`,
+        },
+    });
+    setUser(userNamme.data);
+  console.log(userNamme.data , "user");
+  }
+  catch (error) {
+      console.log(error);
+    }
+};
+
+
 
   return (
   <>
@@ -38,12 +71,12 @@ const logout = () => {
        <div className="header">
        <div className="leftSide">
        <div className="publicProfile"></div>
-       <img id="avatar" src={Avatar}  alt="avatar" height={80}/>
+       <img id="avatar" src={user.avatar}  alt="avatar" height={80}/>
        <div className="welcomeName">
-       <h4 id="welcome"> Welcome <br /> <span id="name"> Dr. Anoud </span> </h4>
+       <h4 id="welcome"> Welcome <br /> <span id="name"> D. {user.fullName}  </span> </h4>
        <div className="icons">
          <ul className="iconsul">
-           <li className="iconsli"><BsPersonCircle /></li>
+           <li className="iconsli"><span className="profile" onClick={()=>navigate(`/DoctorProfile/${JSON.parse(localStorage.getItem("user"))._id}`)}><BsPersonCircle /> </span></li>
            <li className="iconsli"><BsChatFill /></li>
            <li className="iconsli"><IoIosLogOut onClick={logout} /></li>
          </ul>
@@ -58,17 +91,15 @@ const logout = () => {
              <p className="mainNav"> MAIN NAVIGATION </p>
            </div>
            <ul className="ulNav"> 
-           <li className="nav"> <AiFillHome className="iconNav" /> <Link className="navLink" to="/Doctor">Home</Link> </li>
-           <li className="nav"> <IoPersonAddSharp className="iconNav" /> <Link className="navLink" to="/AllPatients">Patients</Link> </li>
+           <li className="nav"> <AiFillHome className="iconNav" /> <span className="navLink"  onClick={()=>navigate(`/Doctor/${JSON.parse(localStorage.getItem("user"))._id}`)}>Home</span> </li>
+           <li className="nav"> <BsFillPersonFill className="iconNav" /> <Link className="navLink" to="/AllPatients">Patients</Link> </li>
            <li className="nav"> <BsCalendarCheck className="iconNav"/> <Link className="navLink" to="/DoctorSchedule">Appointments</Link> </li>
-           <li className="nav"> <IoIosPaper className="iconNav"/> New Readings </li>
            </ul>
          </aside>
 
          <div className="AddBtn"> 
       <button className="clicker" tabindex="1" > + </button>
       <button className="hiddenAddPatient"> <Link className="navLink" to="/AddPatient"> <BsPeopleFill  id="iconBtnPatient" /></Link></button>
-      <button className="hiddenAddAppointment"> <Link className="navLink" to="/AddPatient"> <BsCalendarPlus  id="iconBtnPatient" /></Link></button>
 
 
       </div>

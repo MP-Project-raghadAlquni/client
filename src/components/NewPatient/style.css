@@ -10,8 +10,8 @@
 
 }
 
-#FirstName,
-#LastName,
+#FirstName1,
+#LastName1,
 #FileNumber,
 #age,
 #gender,
@@ -24,6 +24,7 @@
 
 #age {
   padding: 12px 1px;
+  margin-bottom: 1.5rem;
 }
 
 #age::-webkit-input-placeholder {
@@ -31,15 +32,22 @@
   left: 18px;
 }
 
+#FirstName1::-webkit-input-placeholder , #LastName1::-webkit-input-placeholder {
+  position: absolute;
+  left: 18px;
+}
 input:focus,
 select:focus {
   outline: none;
 }
 
-#FirstName,
-#LastName {
-  width: 49%;
+#FirstName1,
+#LastName1 {
+  width: 48.83%;
   margin-right: 1%;
+  padding: 12px 1px;
+  margin-bottom: 1.5rem;
+
 }
 
 

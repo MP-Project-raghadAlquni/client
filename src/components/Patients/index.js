@@ -10,6 +10,8 @@ import DoctorHeader from "../DoctorHeader";
 const Patients = () => {
   const navigate = useNavigate();
   const [patients, setPatients] = useState("");
+  
+
 
   useEffect(() => {
     getallverifiedPatients();
@@ -46,40 +48,54 @@ const Patients = () => {
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           {state.Login.token ? (
             <>
-              {patients.length && (
+              {patients.length ? (
                 <>
-                <div id="allPatients">
-                  {patients.map((patient) => {
-                    console.log(patient);
-                    return (
-                      <div key={patient._id} className="allPatientsInfo">
-                        <div className="patientInfor">
-                          <div
-                            onClick={() => {
-                              onePaitent(patient._id);
-                            }}>
-                                <div className="imgProfile">
+                  <div id="allPatients">
+                    {patients.map((patient) => {
+                      console.log(patient);
+                      return (
+                        <div key={patient._id} className="allPatientsInfo">
+                          <div className="patientInfor">
+                            <div
+                              onClick={() => {
+                                onePaitent(patient._id);
+                                
+                              }}
+                            >
+                              <div className="imgProfile">
                                 <img
-                            className="ProfileImg"
-                            src={patient.avatar}
-                            alt="patientImg"
-                          />
-                          <BiDotsHorizontalRounded className="GotoPatient"/>
-
-                        </div>
-                        <div className= "content">
-                            <h1 className="contentPara FUname"> {patient.fullName} </h1>
-                            <p className="fN"> {patient.fileNumber} </p>
-                            <p className="contentPara">{patient.diabetesType} </p>
-                            <p className="contentPara">{patient.gender} , {patient.age} years old </p>
-                            <p className="contentPara"> P: {patient.phoneNumber} </p>
+                                  className="ProfileImg"
+                                  src={patient.avatar}
+                                  alt="patientImg"
+                                />
+                              </div>
+                              <div className="content">
+                                <h1 className="contentPara FUname">
+                                  {" "}
+                                  {patient.fullName}{" "}
+                                </h1>
+                                <p className="fN"> {patient.fileNumber} </p>
+                                <p className="contentPara">
+                                  {patient.diabetesType}{" "}
+                                </p>
+                                <p className="contentPara">
+                                  {patient.gender} , {patient.age} years old{" "}
+                                </p>
+                                <p className="contentPara">
+                                  {" "}
+                                  P: {patient.phoneNumber}{" "}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                   </div>
+                </>
+              ) : (
+                <>
+                  <h1> Loading . . .</h1>
                 </>
               )}
             </>

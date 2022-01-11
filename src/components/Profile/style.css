@@ -1,0 +1,151 @@
+.titleProfile {
+    display: inline;  
+}
+
+.titleProfile00 {
+    position: relative;
+    top: -8.5rem;
+    left: -1.5rem;;
+    /* margin-bottom: -9px; */
+}
+
+.RightSideProfile {
+    position: absolute;
+    top: 24.6%;
+    left: 33.5%;
+}
+
+.paraProfile {
+    margin-bottom: 2.5rem;
+    /* margin-left: 1rem; */
+}
+
+.RightSideProfile2 {
+    position: absolute;
+    top: 24.6%;
+    left: 64.5%;
+}
+
+.pup {
+    background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 60%;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.19);
+-webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.19);
+-moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.19);
+height: 50vh;
+}
+
+.editProf {
+    margin-top: 4rem;
+}
+
+
+.Close {
+    position: relative;
+    top: -60%;
+    left: 74%;
+    background-color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor:pointer;
+
+}
+
+#tableTiltle3 {
+    margin-left: 1rem;
+}
+
+.pup2 {
+    position: absolute;
+    top: 17%;
+    left: 26%;
+}
+
+.ProInp {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.358);
+    background-color:white;
+    position: relative;
+    top: -5px;
+}
+
+.ProInp00 {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.358);
+    background-color:white;
+    position: relative;
+    top: -150px;
+    left: 35px;
+}
+
+/* .ProInp001 {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.358);
+    background-color:white;
+    position: relative;
+    top: -150px;
+    left: 20px;
+} */
+
+/* .ProInp002 {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.358);
+    background-color:white;
+    position: relative;
+    top: -150px;
+    left: 0px;
+} */
+.pup3 {
+    position: absolute;
+    top: 17%;
+    left: 64.5%;
+}
+
+.Btns {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    position: absolute;
+    top: 60%;
+    left: 45.5%;
+}
+.res {
+cursor:pointer;
+}
+
+.EditBtn {
+    /* box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.21);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.21); 
+    background-image: linear-gradient(to right, #65d3d5a8 0%, #ab9ae582 51%, #65d3d5a8 100%);
+    /* padding: 0.9rem 1.5rem; 
+    position: relative;
+    left: 0;
+    padding: 0.7rem 2.1rem; */
+
+    flex: 1 1 auto;
+    margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    font-size: 1.2rem; 
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.19);
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.19);
+    border: none;
+    background-image: linear-gradient(to right, #65d3d5a8 0%, #ab9ae582 51%, #65d3d5a8 100%);
+    color: white;
+    background-color: #65d3d5ab ;
+    padding: 0.7rem 2.3rem 0.8rem;
+    cursor:pointer;
+}
+
+.EditBtn:hover {
+    background-position: right center;
+    }

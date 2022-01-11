@@ -16,7 +16,7 @@ import { BiBarChartSquare } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
 import {Helmet} from "react-helmet";
 import DoctorHeader from "../DoctorHeader";
-import Home from "../Home";
+import Login from "../Login";
 
 
 
@@ -83,16 +83,16 @@ return (
   <DoctorHeader />
     {state.Login.token ? (
   <>
-  {newReadings.length && (
+  <aside className="bodyRight">
+      <div className="insideBody">
+      <h2 className="bodyHomeh2"> Home </h2>
+      <h5 className="bodyHomeh5">  Welcome to Readings App</h5>
+  {newReadings.length ? (
     <>
     {newReadings.map((readings) => {
        console.log(readings, "here");
       return (
         <>
-    <aside className="bodyRight">
-      <div className="insideBody">
-      <h2 className="bodyHomeh2"> Home </h2>
-      <h5 className="bodyHomeh5">  Welcome to Readings App</h5>
       
       <div className="services">
           <aside id="patients">
@@ -134,18 +134,29 @@ return (
           </tr>
         </table>
       </div>
-      </div>
-      </aside>
+     
   </>
       )
     })
     }
   </>
-  )}
+
+  ) : (
+    <>
+    
+    <CgDanger className="ifNotIcon" />
+    <p className="IfNot"> There`s no Patient with Readings yet!! </p>
+    </>
+  )
+}
+</div>
+</aside>
   </>
+
     ) : ( 
-      <Home />
+      <Login />
     )
+    
   }
   </>
   )
