@@ -188,11 +188,7 @@ const DoctorProfile = () => {
                     <p className="paraProfile">
                       {" "}
                       <h3 className="titleProfile"> Email: </h3>{" "}
-                      <input
-                        className="ProInp"
-                        type="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
+                      {oneUserProfile.email}
                     </p>
                     <p className="paraProfile">
                       {" "}

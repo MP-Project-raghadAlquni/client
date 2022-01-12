@@ -21,12 +21,15 @@ const DoctorHeader = () => {
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-const [fullName, setfullName] = useState([])
+  const [show, setShow] = useState(false);
 
 const state = useSelector((state) => {
   return state
 });
 
+const handleChange = () => {
+  setShow(!show);
+};
 
 
 const logout = () => {
@@ -98,9 +101,15 @@ const oneUserName = async () => {
          </aside>
 
          <div className="AddBtn"> 
-      <button className="clicker" tabindex="1" > + </button>
+      <button className="clicker"  onClick={handleChange} > + </button>
+      {show ? (
       <button className="hiddenAddPatient"> <Link className="navLink" to="/AddPatient"> <BsPeopleFill  id="iconBtnPatient" /></Link></button>
+      ) : (
+<>
 
+</>
+      )
+}
 
       </div>
          

@@ -1,30 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
-import Avatar from "../images/defaultAvatar.png";
-import { BsPersonCircle } from "react-icons/bs";
-import { BsChatFill } from "react-icons/bs";
-import { IoIosLogOut } from "react-icons/io";
-import { AiFillHome, AiFillPhone } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck, BsCalendarPlus } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
+import { AiFillPhone } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { Helmet } from "react-helmet";
-import { BsPeopleFill } from "react-icons/bs";
-import { userLogout } from "./../../reducers/loginn";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import Home from "../Home";
 import Moment from "react-moment";
 import DoctorHeader from "../DoctorHeader";
+import Swal from "sweetalert2";
 
 const OnePatient = () => {
   const id = useParams().id;
   const [onePaitent, setOnePaitent] = useState("");
   const [patientsReadings, setPatientsReadings] = useState([]);
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const state = useSelector((state) => {
@@ -56,6 +47,31 @@ const OnePatient = () => {
     }
   };
 
+  const ChangeStatus = async () => {
+    try {
+      const res = await axios.put(
+        `${process.env.REACT_APP_BASE_URL}/editReadingsStatus/${id}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${state.Login.token}`,
+          },
+        }
+      );
+      console.log(res);
+
+      if (res.status == 200) {
+        Swal.fire({
+          title: `Readings have been read`,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    //newReadingsPatient()
+    setPatientsReadings([]);
+  };
+
   const newReadingsPatient = async () => {
     try {
       const onePatientReadings = await axios.get(
@@ -83,11 +99,6 @@ const OnePatient = () => {
     navigate(`/Dosses/${id}`);
   };
 
-  const logout = () => {
-    dispatch(userLogout({ token: "" }));
-    navigate("/");
-  };
-
   return (
     <>
       {state.Login.token ? (
@@ -97,6 +108,7 @@ const OnePatient = () => {
           </Helmet>
 
           <DoctorHeader />
+
           <aside className="bodyRight">
             <div className="insideBody">
               <h2 className="PattientName">
@@ -111,9 +123,27 @@ const OnePatient = () => {
               </h5>
               <h5 className="bodyHomeh5">
                 {" "}
-                <AiFillPhone className="infoIcon" /> {onePaitent.phoneNumber} ,{" "}
-                <MdEmail className="infoIcon" /> {onePaitent.email}{" "}
+                <AiFillPhone className="infoIcon1" /> {onePaitent.phoneNumber} ,{" "}
+                <MdEmail className="infoIcon1" /> {onePaitent.email}{" "}
               </h5>
+              <button
+                className="btn1 submitBtn bttnOne"
+                onClick={() => {
+                  Paitent(onePaitent._id);
+                }}
+              >
+                {" "}
+                new Appointment{" "}
+              </button>
+              <button
+                className="btn1 submitBtn bttnOne1"
+                onClick={() => {
+                  dosses(onePaitent._id);
+                }}
+              >
+                {" "}
+                Dosses{" "}
+              </button>
               <div className="patientReadings">
                 <div className="ReadingsTables">
                   <table className="table">
@@ -128,7 +158,7 @@ const OnePatient = () => {
                       <th className="title"> Before Sleep </th>
                     </tr>
 
-                    {patientsReadings.length && (
+                    {patientsReadings.length ? (
                       <>
                         {patientsReadings.map((patientReadings) => {
                           console.log(patientReadings, "readings");
@@ -195,27 +225,25 @@ const OnePatient = () => {
                             </>
                           );
                         })}
+                        <button
+                          className="changeBtn btn1 submitBtn"
+                          onClick={() => {
+                            ChangeStatus();
+                          }}
+                        >
+                          DONE
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <div className="ifNot1">
+                          <p> There's no new readings for this patient </p>
+                        </div>
                       </>
                     )}
                   </table>
                 </div>
               </div>
-              <button
-                onClick={() => {
-                  Paitent(onePaitent._id);
-                }}
-              >
-                {" "}
-                new Appointment{" "}
-              </button>
-              <button
-                onClick={() => {
-                  dosses(onePaitent._id);
-                }}
-              >
-                {" "}
-                Dosses{" "}
-              </button>
             </div>
           </aside>
           {/* </div> */}
