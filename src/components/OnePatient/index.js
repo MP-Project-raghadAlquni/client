@@ -15,20 +15,20 @@ const OnePatient = () => {
   const id = useParams().id;
   const [onePaitent, setOnePaitent] = useState("");
   const [patientsReadings, setPatientsReadings] = useState([]);
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    onePatient();
+    newReadingsPatient();
+    // eslint-disable-next-line
+  }, []);
 
   const state = useSelector((state) => {
     return state;
   });
 
-  useEffect(() => {
-    onePatient();
-  }, []);
 
-  useEffect(() => {
-    newReadingsPatient();
-  }, []);
+
 
   const onePatient = async () => {
     try {
@@ -60,6 +60,7 @@ const OnePatient = () => {
       );
       console.log(res);
 
+      // eslint-disable-next-line
       if (res.status == 200) {
         Swal.fire({
           title: `Readings have been read`,
@@ -68,7 +69,6 @@ const OnePatient = () => {
     } catch (error) {
       console.log(error);
     }
-    //newReadingsPatient()
     setPatientsReadings([]);
   };
 
@@ -109,7 +109,7 @@ const OnePatient = () => {
 
           <DoctorHeader />
 
-          <aside className="bodyRight">
+          <aside className="bodyRight1">
             <div className="insideBody">
               <h2 className="PattientName">
                 {" "}

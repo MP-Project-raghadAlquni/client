@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
 const NewPatient = () => {
+  // eslint-disable-next-line
   const [patients, setPatients] = useState("");
   const [fileNumber, setFileNumber] = useState("");
   const [fisrtName, setFisrtName] = useState("");
@@ -83,7 +84,7 @@ const NewPatient = () => {
                 addPatient(e);
               }}
             >
-              <aside className="bodyRight">
+              <aside className="bodyRight1">
                 <div className="insideBody">
                   <h2 className="bodyHomeh2"> Add Patient </h2>
                   <h5 className="bodyHomeh5"> Welcome to Readings App</h5>

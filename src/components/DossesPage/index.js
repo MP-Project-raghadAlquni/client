@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DoctorHeader from "../DoctorHeader";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import "./style.css";
 import { MdEmail } from "react-icons/md";
-import { AiFillHome, AiFillPhone } from "react-icons/ai";
+import { AiFillPhone } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 const DossesPage = () => {
@@ -18,6 +18,7 @@ const DossesPage = () => {
   const [insulineType2Dosses, setInsulineType2Dosses] = useState("");
   const [note, setNote] = useState("");
   const [show, setShow] = useState("");
+  // eslint-disable-next-line
   const [message, setMessage] = useState("");
 
 
@@ -29,6 +30,7 @@ const DossesPage = () => {
   useEffect(() => {
     onePatientINFO();
     OnePatientDosses();
+    // eslint-disable-next-line
   }, []);
 
   const state = useSelector((state) => {
@@ -143,7 +145,7 @@ const DossesPage = () => {
   return (
     <>
       <DoctorHeader />
-      <aside className="bodyRight">
+      <aside className="bodyRight1">
         <div className="insideBody">
           <h2 className="PattientName">
             {" "}
@@ -279,10 +281,9 @@ const DossesPage = () => {
                         </table>
                         
                         <input
-                            className="tableInput"
                             type="submit"
                             value="UPDATE"
-                            className = " AddReadingsBTN btnNewReadings "
+                            className = "tableInput AddReadingsBTN btnNewReadings "
                           />
                         {/* <button onClick={(e) => editDosses(e)}> Edit </button> */}
                       </form>

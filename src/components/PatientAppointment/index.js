@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
 // import "./style.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import PatientHeader from "../PatientHeader";
 import axios from "axios";
 import Moment from "react-moment";
@@ -16,6 +15,7 @@ const PatientSchedule = () => {
 
   useEffect(() => {
     AllPatientAppintment();
+      // eslint-disable-next-line
   }, []);
 
   const AllPatientAppintment = async () => {

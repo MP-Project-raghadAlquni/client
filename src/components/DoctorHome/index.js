@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import Avatar from "../images/defaultAvatar.png"
-import { BsPersonCircle } from "react-icons/bs";
-import { BsChatFill } from "react-icons/bs";
-import { IoIosLogOut } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
 import { BsCalendarCheck } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
 import { CgDanger } from "react-icons/cg";
-import { BiBarChartSquare } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
-import {Helmet} from "react-helmet";
 import DoctorHeader from "../DoctorHeader";
 import Login from "../Login";
 
@@ -34,14 +25,17 @@ const state = useSelector((state) => {
 
 useEffect(() => {
   getNewReadings()
+  // eslint-disable-next-line
 }, [])
 
 useEffect(() => {
   getDoctorAppointments()
+  // eslint-disable-next-line
 }, [])
 
 useEffect(() => {
   getallverifiedPatient()
+  // eslint-disable-next-line
 }, [])
 
 const getNewReadings = async () => {
@@ -86,7 +80,7 @@ return (
   <DoctorHeader />
     {state.Login.token ? (
   <>
-  <aside className="bodyRight">
+  <aside className="bodyRight1">
       <div className="insideBody">
       <h2 className="bodyHomeh2"> Home </h2>
       <h5 className="bodyHomeh5">  Welcome to Readings App</h5>

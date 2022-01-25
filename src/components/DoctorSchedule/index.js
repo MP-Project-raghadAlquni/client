@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
 import "./style.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import DoctorHeader from "../DoctorHeader";
 import axios from "axios";
 import Moment from "react-moment";
@@ -16,6 +15,7 @@ const DoctorSchedule = () => {
 
   useEffect(() => {
     AllAppintment();
+    // eslint-disable-next-line
   }, []);
 
   const AllAppintment = async () => {
@@ -39,7 +39,7 @@ const DoctorSchedule = () => {
   return (
     <>
   <DoctorHeader />
-  <aside className="bodyRight">
+  <aside className="bodyRight1">
   <div className="insideBody">
   <h2 className="bodyHomeh2"> Doctor Schedule </h2>
       <h5 className="bodyHomeh5">  Welcome to Readings App</h5>

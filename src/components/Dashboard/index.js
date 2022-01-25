@@ -1,30 +1,19 @@
 
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import Avatar from "../images/defaultAvatar.png"
-import { BsPersonCircle } from "react-icons/bs";
-import { BsChatFill } from "react-icons/bs";
-import { IoIosLogOut } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
 import { CgDanger } from "react-icons/cg";
-import { BiBarChartSquare } from "react-icons/bi";
-import { BsFillPersonFill } from "react-icons/bs";
-import {Helmet} from "react-helmet";
 import DashboaredHeader from "../DashboaredHeader";
-import Home from "../Home";
 
 
 
 const Dashboared = () => {
+  const [user, setUser] = useState([]);
 
     useEffect(() => {
         getallUser();
+        // eslint-disable-next-line
       }, []);
 
       
@@ -32,10 +21,7 @@ const state = useSelector((state) => {
   return state;
 });
 
-const [newReadings, setNewReadings] = useState([]);
-const [user, setUser] = useState([]);
-const [numberReadings, setNumberReadings] = useState([]);
-const [apppointment, setApppointment] = useState([]);
+
 
 
 const getallUser = async () => {

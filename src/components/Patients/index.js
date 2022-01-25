@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { BiDotsHorizontalRounded } from "react-icons/bi";
-
 import "./style.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -15,6 +13,7 @@ const Patients = () => {
 
   useEffect(() => {
     getallverifiedPatients();
+      // eslint-disable-next-line
   }, []);
 
   const state = useSelector((state) => {
@@ -42,7 +41,7 @@ const Patients = () => {
   return (
     <>
       <DoctorHeader />
-      <aside className="bodyRight">
+      <aside className="bodyRight1">
         <div className="insideBody">
           <h2 className="bodyHomeh2"> All Patients </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
@@ -59,9 +58,7 @@ const Patients = () => {
                             <div
                               onClick={() => {
                                 onePaitent(patient._id);
-                                
-                              }}
-                            >
+                              }}>
                               <div className="imgProfile">
                                 <img
                                   className="ProfileImg"

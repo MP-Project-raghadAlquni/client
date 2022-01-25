@@ -3,24 +3,21 @@ import { Link, useNavigate , useParams} from "react-router-dom";
 import { userLogout } from "./../../reducers/loginn";
 import { useDispatch, useSelector } from "react-redux";
 import "./style.css";
-import Avatar from "../images/defaultAvatar.png";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
 import { BsCalendarCheck, BsPeopleFill } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
+import { FaSyringe } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-import { BsPerson } from "react-icons/bs";
 import axios from "axios";
 
 const PatientHeader = () => {
+    // eslint-disable-next-line
   const id = useParams().id;
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-const [fullName, setfullName] = useState([])
 
 const state = useSelector((state) => {
   return state
@@ -37,6 +34,7 @@ const logout = () => {
 
 useEffect(() => {
   oneUserName()
+    // eslint-disable-next-line
 }, [])
 
 
@@ -116,7 +114,7 @@ const oneUserName = async () => {
               </li>
               <li className="nav">
                 {" "}
-                <IoIosPaper className="iconNav"/> All Readings{" "}
+                <FaSyringe className="iconNav"/>  <Link className="navLink" to="/MyDosses">My Dosses </Link>
               </li>
             </ul>
           </aside>

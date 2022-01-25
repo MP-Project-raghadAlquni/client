@@ -1,25 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import "./style.css";
-import Avatar from "../images/defaultAvatar.png";
-import { BsPersonCircle } from "react-icons/bs";
-import { BsFillPersonFill } from "react-icons/bs";
 import { TiArrowRightOutline } from "react-icons/ti";
-import { AiFillHome, AiFillPhone, AiTwotoneFileText } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck, BsCalendarPlus } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
+import { AiFillPhone } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { Helmet } from "react-helmet";
-import { BsPeopleFill } from "react-icons/bs";
-import { userLogout } from "./../../reducers/loginn";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import Home from "../Home";
-import Moment from "react-moment";
 import DashboaredHeader from "../DashboaredHeader";
 import Swal from "sweetalert2";
-
 import { IoWomanSharp } from "react-icons/io5";
 import { FaMale } from "react-icons/fa";
 
@@ -27,7 +17,6 @@ const PendingDoctor = () => {
   const id = useParams().id;
   const [onePending, setOnePending] = useState("");
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const state = useSelector((state) => {
@@ -36,6 +25,7 @@ const PendingDoctor = () => {
 
   useEffect(() => {
     onePendings();
+      // eslint-disable-next-line
   }, []);
 
   const onePendings = async () => {
@@ -67,6 +57,7 @@ const PendingDoctor = () => {
         }
       );
       console.log(res);
+        // eslint-disable-next-line
       if (res.status == 200) {
         Swal.fire({
           title: `Account Rejected`,
@@ -89,6 +80,7 @@ const PendingDoctor = () => {
         }
       );
       console.log(accept);
+        // eslint-disable-next-line
       if (accept.status == 200) {
         Swal.fire({
           title: `Account Accepted`,
