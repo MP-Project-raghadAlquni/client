@@ -1,45 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./style.css";
-import DoctorHeader from "../DoctorHeader";
+import PatientHeader from "../PatientHeader";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { GrFormClose } from "react-icons/gr";
 
 
 const PatientProfile = () => {
   const id = useParams().id;
-  const [userProfile, setUserProfile] = useState("");
-  const [avatar, setAvatar] = useState("");
+  // const [avatar, setAvatar] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  // eslint-disable-next-line
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
-  const [message, setMessage] = useState("");
   const [oneUserProfile, setOneUserProfile] = useState("");
   const [show, setShow] = useState(false);
 
-  // console.log(phoneNumber , "ll");
 
   useEffect(() => {
     oneUserProfileFun();
+      // eslint-disable-next-line
   }, []);
 
   const state = useSelector((state) => {
     return state;
   });
 
-  // const [profile, setProfile] = useState({ name: state.signIn.})
 
   const handleChange = () => {
     setShow(!show);
   };
 
-  // console.log(oneUserProfile._id, "ee");
 
   const editProfile = async (id) => {
-    // e.preventDefault();
     try {
       const res = await axios.put(
         `${process.env.REACT_APP_BASE_URL}/doctorProfile/${id}`,
@@ -88,7 +84,6 @@ const PatientProfile = () => {
         }
       );
       setOneUserProfile(user.data);
-      // console.log(user.data , "user");
     } catch (error) {
       console.log(error);
     }
@@ -100,10 +95,10 @@ const PatientProfile = () => {
   }
   return (
     <>
-      <DoctorHeader />
+     <PatientHeader />
       <aside className="bodyRight">
         <div className="insideBody">
-          <h2 className="bodyHomeh2"> Doctor Profile </h2>
+          <h2 className="bodyHomeh2"> Patient Profile </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
           <div className="ReadingsTables">
             <div className="DivDoctorProfileImg">
@@ -113,7 +108,7 @@ const PatientProfile = () => {
                 alt="patientImg"
               />
             </div>
-            <aside className="RightSideProfile">
+            <aside className="RightSideProfile1">
               <p className="paraProfile">
                 {" "}
                 <h3 className="titleProfile"> Name: </h3>{" "}
@@ -135,7 +130,7 @@ const PatientProfile = () => {
                 {oneUserProfile.internationalId}
               </p>
             </aside>
-            <aside className="RightSideProfile2">
+            <aside className="RightSideProfile22">
               <p className="paraProfile">
                 {" "}
                 <h3 className="titleProfile"> Gender: </h3>{" "}
@@ -188,11 +183,7 @@ const PatientProfile = () => {
                     <p className="paraProfile">
                       {" "}
                       <h3 className="titleProfile"> Email: </h3>{" "}
-                      <input
-                        className="ProInp"
-                        type="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
+                      {oneUserProfile.email}
                     </p>
                     <p className="paraProfile">
                       {" "}

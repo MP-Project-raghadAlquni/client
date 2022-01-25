@@ -1,48 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import Avatar from "../images/defaultAvatar.png"
-import { BsPersonCircle } from "react-icons/bs";
-import { BsChatFill } from "react-icons/bs";
-import { IoIosLogOut } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
 import { BsCalendarCheck } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
 import { CgDanger } from "react-icons/cg";
-import { BiBarChartSquare } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
-import {Helmet} from "react-helmet";
 import DoctorHeader from "../DoctorHeader";
 import Login from "../Login";
 
 
 
 const DoctorHome = () => {
-
-
-const state = useSelector((state) => {
-  return state;
-});
-
+const navigate = useNavigate();
 const [newReadings, setNewReadings] = useState([]);
 const [patients, setPatients] = useState([]);
 const [numberReadings, setNumberReadings] = useState([]);
 const [apppointment, setApppointment] = useState([]);
 
 
+const state = useSelector((state) => {
+  return state;
+});
+
 useEffect(() => {
   getNewReadings()
+  // eslint-disable-next-line
 }, [])
 
 useEffect(() => {
   getDoctorAppointments()
+  // eslint-disable-next-line
 }, [])
 
 useEffect(() => {
   getallverifiedPatient()
+  // eslint-disable-next-line
 }, [])
 
 const getNewReadings = async () => {
@@ -57,6 +50,10 @@ const getNewReadings = async () => {
   setNumberReadings(users.data.length)
 }
 
+const onePaitent = (id) => {
+  console.log(id);
+  navigate(`/Patients/${id}`);
+};
 
 const getDoctorAppointments = async () => {
   const appointment = await axios.get(`${process.env.REACT_APP_BASE_URL}/doctorAppointments`, 
@@ -83,17 +80,10 @@ return (
   <DoctorHeader />
     {state.Login.token ? (
   <>
-  <aside className="bodyRight">
+  <aside className="bodyRight1">
       <div className="insideBody">
       <h2 className="bodyHomeh2"> Home </h2>
       <h5 className="bodyHomeh5">  Welcome to Readings App</h5>
-  {newReadings.length ? (
-    <>
-    {newReadings.map((readings) => {
-       console.log(readings, "here");
-      return (
-        <>
-      
       <div className="services">
           <aside id="patients">
            <h3 id="patient"> All Patient </h3>
@@ -105,12 +95,6 @@ return (
            <h3 id="appointment"> All Appointment </h3>
            <BsCalendarCheck id="iconApointment"/>
            <h2 id="appointmentNum"> {apppointment} </h2>
-           </aside>
-
-           <aside id="Charts">
-           <h3 id="chart"> Charts </h3>
-           <BiBarChartSquare id="iconChart"/> 
-           <h2 id="chartNum"> {numberReadings} </h2>
            </aside>
       </div>
 
@@ -124,17 +108,20 @@ return (
             <th className="title"> Readings Number </th>
             <th className="title" id="title"> See More </th>
           </tr>
-
+  {newReadings.length ? (
+    <>
+    {newReadings.map((readings) => {
+       console.log(readings, "here");
+      return (
+        <>
           <tr>
             <td> </td>
             <td className="sup"> {readings.byUser.fullName} </td>
             <td className="sup"> {readings.byUser.fileNumber} </td>
             <td className="sup"> {numberReadings} </td>
-            <td className="sup" id="sup"> See More </td>
+            <td className="sup" id="sup" onClick={() => {
+                                onePaitent(readings.byUser._id) }} > See More </td>
           </tr>
-        </table>
-      </div>
-     
   </>
       )
     })
@@ -149,6 +136,8 @@ return (
     </>
   )
 }
+</table>
+      </div>
 </div>
 </aside>
   </>

@@ -171,3 +171,81 @@ input[type=file] {
 }
 
 
+@media screen and (max-width: 734) {
+    .DivForm {
+        height: 62vh;
+        width: auto;
+    }
+
+    .FormTitle {
+        left: 29.4rem;
+    }
+
+    .FormInfo {
+        left: -1em;
+    }
+    .vl {
+        top: 70px;
+    }
+
+    .SignBtn {
+        left: 29rem;
+        top: 27.4rem;
+    }
+}
+
+
+@media screen and (max-width: 820px) {
+    .DivForm {
+        width: auto;
+        height: 46vh;
+    }
+
+    .FormTitle {
+        left: 28.4rem;
+    }
+
+    .FormInfo {
+       left: -1rem;
+    }
+
+    .SignBtn {
+        left: 29rem;
+        top: 27.4rem;
+    }
+
+    .vl {
+        left: 42%;
+    }
+
+    .ParaLogin {
+        left: -15%;
+    }
+
+    .DivForm1 {
+        width: 90%;
+        height: auto;
+    }
+    .FormTitle1 {
+        left: 22rem;
+    }
+    
+    .ParaLogin1 {
+        left: -29%;
+    }
+
+    .FL {
+        left: -11rem;
+    }
+
+    input[type=file] {
+        left: 11rem;
+    }
+
+    .SignBtn3 {
+        left: -7.5rem;
+    }
+    .ParaLogin1 {
+        left: -39%;
+    }
+}

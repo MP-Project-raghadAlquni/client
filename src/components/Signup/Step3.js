@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SignupHeader from "../SignupHeader"
 
 
@@ -10,7 +9,6 @@ import SignupHeader from "../SignupHeader"
 const Step3 = ({ nextStep, handleFormData, prevStep, values }) => {
    //creating error state for validation
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
 
 
     // after form submit validating the form data using validator

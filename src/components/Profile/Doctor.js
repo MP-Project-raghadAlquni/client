@@ -1,45 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./style.css";
 import DoctorHeader from "../DoctorHeader";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { GrFormClose } from "react-icons/gr";
 
 
 const DoctorProfile = () => {
   const id = useParams().id;
-  const [userProfile, setUserProfile] = useState("");
-  const [avatar, setAvatar] = useState("");
+  // const [avatar, setAvatar] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  // eslint-disable-next-line
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
-  const [message, setMessage] = useState("");
   const [oneUserProfile, setOneUserProfile] = useState("");
   const [show, setShow] = useState(false);
 
-  // console.log(phoneNumber , "ll");
-
   useEffect(() => {
     oneUserProfileFun();
+      // eslint-disable-next-line
   }, []);
 
   const state = useSelector((state) => {
     return state;
   });
 
-  // const [profile, setProfile] = useState({ name: state.signIn.})
-
   const handleChange = () => {
     setShow(!show);
   };
 
-  // console.log(oneUserProfile._id, "ee");
 
   const editProfile = async (id) => {
-    // e.preventDefault();
     try {
       const res = await axios.put(
         `${process.env.REACT_APP_BASE_URL}/doctorProfile/${id}`,
@@ -188,11 +182,7 @@ const DoctorProfile = () => {
                     <p className="paraProfile">
                       {" "}
                       <h3 className="titleProfile"> Email: </h3>{" "}
-                      <input
-                        className="ProInp"
-                        type="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
+                      {oneUserProfile.email}
                     </p>
                     <p className="paraProfile">
                       {" "}

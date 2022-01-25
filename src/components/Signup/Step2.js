@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SignupHeader from "../SignupHeader"
-import axios from "axios";
 
 // creating functional component ans getting props from app.js and destucturing them
 const Step2 = ({ nextStep, handleFormData, values }) => {
-    const navigate = useNavigate();
   //creating error state for validation
   const [error, setError] = useState(false);
 

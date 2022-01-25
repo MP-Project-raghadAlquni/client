@@ -13,6 +13,7 @@ const Final = ({ nextStep, handleFormData, prevStep, values }) => {
   const [certificates, setCertificates] = useState([]);
   const [letter, setLetter] = useState("");
   const [license, setLicense] = useState("");
+  // eslint-disable-next-line
   const [progress, setProgress] = useState(0);
 
   const navigate = useNavigate();
@@ -253,8 +254,7 @@ const handleLicense = (e) => {
               <Button variant="primary" onClick={prevStep} className="SignBtn3">
                 Previous
               </Button>
-
-              <input className="btn1 submitBtn" type="submit" value="Submit" className="SignBtn3"/>
+              <input className="btn1 submitBtn SignBtn3" type="submit" value="Submit"/>
             </div>
           </Form>
           <div class="vl"></div>

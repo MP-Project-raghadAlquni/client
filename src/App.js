@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
 import "./App.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -31,6 +30,8 @@ import VerifiedBack from "./components/VerifiedBack";
 import DoctorProfile from "./components/Profile/Doctor";
 import PatientProfile from "./components/Profile/Patient";
 import PatientSchedule from "./components/PatientAppointment";
+import Dosses from "./components/MyDosses";
+
 
 const App = () => {
   return (
@@ -75,7 +76,8 @@ const App = () => {
         <Route exact path="/VerifiedBack" element={<VerifiedBack />} />
         <Route exact path="/DoctorProfile/:id" element={<DoctorProfile />} />
         <Route exact path="/PatientProfile/:id" element={<PatientProfile />} />
-
+        <Route exact path="/MyDosses" element={<Dosses />} />
+        
       </Routes>
     </>
   );

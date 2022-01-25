@@ -1,14 +1,11 @@
 import React, {useEffect,useState} from "react";
 import { Link, useNavigate , useParams} from "react-router-dom";
 import "./style.css";
-import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
-import { BsCalendarCheck , BsCalendarPlus } from "react-icons/bs";
-import { IoIosPaper } from "react-icons/io";
+import { BsCalendarCheck } from "react-icons/bs";
 import {Helmet} from "react-helmet";
 import { BsPeopleFill } from "react-icons/bs";
 import { userLogout } from "./../../reducers/loginn";
@@ -17,16 +14,20 @@ import axios from "axios";
 import { BsFillPersonFill } from "react-icons/bs";
 
 const DoctorHeader = () => {
+  // eslint-disable-next-line
   const id = useParams().id;
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-const [fullName, setfullName] = useState([])
+  const [show, setShow] = useState(false);
 
 const state = useSelector((state) => {
   return state
 });
 
+const handleChange = () => {
+  setShow(!show);
+};
 
 
 const logout = () => {
@@ -38,6 +39,7 @@ const logout = () => {
 
 useEffect(() => {
   oneUserName()
+  // eslint-disable-next-line
 }, [])
 
 
@@ -98,9 +100,15 @@ const oneUserName = async () => {
          </aside>
 
          <div className="AddBtn"> 
-      <button className="clicker" tabindex="1" > + </button>
+      <button className="clicker"  onClick={handleChange} > + </button>
+      {show ? (
       <button className="hiddenAddPatient"> <Link className="navLink" to="/AddPatient"> <BsPeopleFill  id="iconBtnPatient" /></Link></button>
+      ) : (
+<>
 
+</>
+      )
+}
 
       </div>
          

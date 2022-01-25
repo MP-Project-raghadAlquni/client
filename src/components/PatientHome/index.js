@@ -7,13 +7,12 @@ import { useSelector } from "react-redux";
 import Moment from "react-moment";
 import { BsJournalPlus } from "react-icons/bs";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import { MdDone } from "react-icons/md";
-
 import Swal from "sweetalert2";
 
 var now = new Date();
 var day = ("0" + now.getDate()).slice(-2);
 var month = ("0" + (now.getMonth() + 1)).slice(-2);
+  // eslint-disable-next-line
 var today = now.getFullYear() + "-" + month + "-" + day;
 
 const date = new Date();
@@ -24,9 +23,8 @@ const PatientHome = () => {
   const day = ("0" + now.getDate()).slice(-2);
   const month = ("0" + (now.getMonth() + 1)).slice(-2);
   const today = now.getFullYear() + "-" + month + "-" + day;
-
+  // eslint-disable-next-line
   const id = useParams().id;
-
   const [newReadings, setNewReadings] = useState([]);
   const [beforeBreakfast, setBeforeBreakfast] = useState("");
   const [afterBreakfast, setAfterBreakfast] = useState("");
@@ -44,7 +42,6 @@ const PatientHome = () => {
   const [updateBeforeDinner, setUpdateBeforeDinner] = useState("");
   const [updateAfterDinner, setUpdateAfterDinner] = useState("");
   const [updateBeforeSleep, setUpdateBeforeSleep] = useState("");
-  const [updateReadingsDate, setUpdateReadingsDate] = useState("");
 
   const [message, setMessage] = useState("");
   const [show, setShow] = useState(false);
@@ -59,6 +56,7 @@ const PatientHome = () => {
 
   useEffect(() => {
     getNewReadingsForUser();
+      // eslint-disable-next-line
   }, []);
 
   const addReadings = async () => {
@@ -126,29 +124,18 @@ const PatientHome = () => {
       );
       if (res.status === 200) {
         Swal.fire({
-          title: `has been added as a new patient`,
+          title: `Updated Done`,
           width: 600,
           padding: "3em",
           color: "##000000",
           background: "#fff ",
           backdrop: `
-              rgba(121, 186, 190,0.1)
-              left top
-              no-repeat`,
+                rgba(121, 186, 190,0.1)
+                left top
+                no-repeat`,
         });
       }
     } catch (error) {
-      Swal.fire({
-        title: `Reading edit is "DONE"`,
-        width: 600,
-        padding: "3em",
-        color: "##000000",
-        background: "#fff ",
-        backdrop: `
-              rgba(121, 186, 190,0.1)
-              left top
-              no-repeat`,
-      });
       console.log(error);
     }
     getNewReadingsForUser(state.Login.token);
@@ -180,7 +167,7 @@ const PatientHome = () => {
                     <th className="title"> Edit </th>
                   </tr>
 
-                  {newReadings.length && (
+                  {newReadings.length ? (
                     <>
                       {newReadings.map((readings) => {
                         console.log(readings, "here");
@@ -279,6 +266,10 @@ const PatientHome = () => {
                           </>
                         );
                       })}
+                    </>
+                  ) : (
+                    <>
+                    <p> There are no new readings </p>
                     </>
                   )}
                 </table>

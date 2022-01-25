@@ -1,19 +1,16 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { userLogout } from "./../../reducers/loginn";
-import { useDispatch, useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
 // import "./style.css";
 import Avatar from "../images/defaultAvatar.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
-import { IoPersonAddSharp } from "react-icons/io5";
 import { BsCalendarCheck, BsPeopleFill } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import {Helmet} from "react-helmet";
-import { BsPerson } from "react-icons/bs";
 
 
 const DashboaredHeader = () => {

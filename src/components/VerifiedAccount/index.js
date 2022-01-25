@@ -1,16 +1,14 @@
 import React, {useState} from "react";
 import "./style.css";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import LoginBack from '../LoginBack'
 
 const VerifiedAccount = () => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fileNumber, setFileNumber] = useState("");
-  const [message, setMessage] = useState("");
 
   const completePatientReagistser = async () => {
     try {
@@ -21,14 +19,11 @@ const VerifiedAccount = () => {
       password: password,
       });
       console.log(res);
+      // eslint-disable-next-line
     if (res.status == 200) {
       Swal.fire({
         title: `Account Verified`,
         text: `Go to the login page to login to your account`,
-        // width: 400,
-        // padding: '3em',
-        // color: '##000000',
-        // background: '#fff ',
       })
 
     } 

@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "./../../reducers/loginn";
 import "./style.css";
 import axios from "axios";
-import login from "../Login";
-import { Helmet } from "react-helmet";
 import LoginBack from "../LoginBack";
 
 const Login = () => {
@@ -14,6 +12,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line
   const [message, setMessage] = useState("");
 
   const state = useSelector((state) => {

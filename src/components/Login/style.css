@@ -103,3 +103,28 @@
       color: black;
       border-bottom: 1px solid black
   }
+
+
+  @media screen and (max-width: 734) {
+      .login {
+          width: 83%;
+      }
+  }
+
+  @media screen and (max-width: 390) {
+    .login {
+        width: 90%;
+    }
+    .LoginForm{
+        left: 10rem;
+    }
+  }
+
+  @media screen and (max-width: 820) {
+    .login {
+        width: 80%;
+    }
+    .LoginForm{
+        left: 20rem;
+    }
+  }

@@ -19,7 +19,7 @@ var today = now.getFullYear() + "-" + month + "-" + day;
 const date = new Date();
 const time = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
 
-const PatientHome = () => {
+const AllReadings = () => {
   const now = new Date();
   const day = ("0" + now.getDate()).slice(-2);
   const month = ("0" + (now.getMonth() + 1)).slice(-2);

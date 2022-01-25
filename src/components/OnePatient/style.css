@@ -17,11 +17,39 @@
     margin-top: 1rem;
 }
 
-.infoIcon {
+.infoIcon1 {
     position: relative;
-    top: 1.5px
+    top: 0.1rem;
 }
 
 .patientReadings {
     background-color: white;
+}
+
+.bttnOne {
+    position: absolute;
+    top: 7.5rem;
+    right: 2%;
+    padding: 0.5rem 1rem ;
+    /* display: block; */
+}
+
+.bttnOne1 {
+    position: absolute;
+    top: 11rem;
+    right: 2%;
+    padding: 0.5rem 1rem ;
+    /* display: block; */
+}
+
+.ifNot1 {
+    text-align: center;
+    width: 100%;
+}
+
+.changeBtn {
+    margin-top: 2rem;
+    position: relative;
+    left: 35rem;
+    cursor: pointer;
 }
