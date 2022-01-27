@@ -283,7 +283,7 @@ const DossesPage = () => {
                         <input
                             type="submit"
                             value="UPDATE"
-                            className = "tableInput AddReadingsBTN btnNewReadings "
+                            className = "AddReadingsBTN btnNewReadings "
                           />
                         {/* <button onClick={(e) => editDosses(e)}> Edit </button> */}
                       </form>

@@ -77,7 +77,6 @@ const App = () => {
         <Route exact path="/DoctorProfile/:id" element={<DoctorProfile />} />
         <Route exact path="/PatientProfile/:id" element={<PatientProfile />} />
         <Route exact path="/MyDosses" element={<Dosses />} />
-        
       </Routes>
     </>
   );

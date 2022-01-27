@@ -95,7 +95,7 @@ const DoctorProfile = () => {
   return (
     <>
       <DoctorHeader />
-      <aside className="bodyRight">
+      <aside className="bodyRight1">
         <div className="insideBody">
           <h2 className="bodyHomeh2"> Doctor Profile </h2>
           <h5 className="bodyHomeh5"> Welcome to Readings App</h5>
