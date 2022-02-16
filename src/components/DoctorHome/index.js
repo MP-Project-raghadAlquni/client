@@ -17,6 +17,7 @@ const DoctorHome = () => {
 const navigate = useNavigate();
 const [newReadings, setNewReadings] = useState([]);
 const [patients, setPatients] = useState([]);
+// eslint-disable-next-line
 const [numberReadings, setNumberReadings] = useState([]);
 const [apppointment, setApppointment] = useState([]);
 const [showNotif, setShowNotif] = useState(false);

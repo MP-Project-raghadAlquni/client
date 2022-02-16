@@ -5,9 +5,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
-import {FaStarOfLife} from "react-icons/fa"
 import { BsCalendarCheck } from "react-icons/bs";
-import { IoIosNotifications } from "react-icons/io"
 import {Helmet} from "react-helmet";
 import { BsPeopleFill } from "react-icons/bs";
 import { userLogout } from "./../../reducers/loginn";
@@ -19,6 +17,7 @@ const DoctorHeader = () => {
   // eslint-disable-next-line
   const id = useParams().id;
   const [user, setUser] = useState("");
+  // eslint-disable-next-line
   const [userNewReadings, setUserNewReadings] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
