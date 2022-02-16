@@ -5,7 +5,9 @@ import { BsPersonCircle } from "react-icons/bs";
 import { BsChatFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
+import {FaStarOfLife} from "react-icons/fa"
 import { BsCalendarCheck } from "react-icons/bs";
+import { IoIosNotifications } from "react-icons/io"
 import {Helmet} from "react-helmet";
 import { BsPeopleFill } from "react-icons/bs";
 import { userLogout } from "./../../reducers/loginn";
@@ -17,10 +19,13 @@ const DoctorHeader = () => {
   // eslint-disable-next-line
   const id = useParams().id;
   const [user, setUser] = useState("");
+  const [userNewReadings, setUserNewReadings] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
+
+  
 const state = useSelector((state) => {
   return state
 });
@@ -39,6 +44,7 @@ const logout = () => {
 
 useEffect(() => {
   oneUserName()
+  allPatientNewReadings()
   // eslint-disable-next-line
 }, [])
 
@@ -61,6 +67,21 @@ const oneUserName = async () => {
     }
 };
 
+const allPatientNewReadings = async () => {
+  try {
+  const userReadings = await axios.get(
+    `${process.env.REACT_APP_BASE_URL}/newReadings`, {
+      headers: {
+          Authorization: `Bearer ${state.Login.token}`,
+        },
+    });
+    setUserNewReadings(userReadings.data);
+  console.log(userReadings.data , "userRead");
+  }
+  catch (error) {
+      console.log(error);
+    }
+};
 
 
   return (

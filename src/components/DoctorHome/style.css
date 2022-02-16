@@ -75,14 +75,15 @@
  }
 
 
+
 #appointments {
     background-color: white;
      border-radius: 0.5rem;
-     margin-top: -7rem;
-     /* margin-left: 50rem; */
+     margin-top: -6.8rem;
+     margin-left: 38.5rem;
      padding: 0.5px 0px 0.1px 20px ;
      width: 49%;
-     position: relative;
+     /* position:relative; */
      left: 48%;
 }
 
@@ -95,7 +96,8 @@
      font-size: 2rem;
      /* margin-left: 17rem; */
      margin-top: -9rem;
-     position: relative;
+     /* position: relative; */
+     margin-left: 90%;
      left: 90%;
 }
 

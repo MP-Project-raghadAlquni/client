@@ -4,11 +4,34 @@
          height: 15rem;
  }
 
+ .notif {
+     color: white;
+     position:absolute;
+     top: 30px;
+     left: 93.5%;
+     font-size: 40px;
+     cursor: pointer;
+ }
+
+ .notifiDiv {
+     height: 50vh;
+     width: 20%;
+     left: 79%;
+     top: 8%;
+     background-color: rgb(243, 243, 243);
+     position:absolute;
+     border-radius: 0.5rem;
+ }
+ .notiUsers{
+     position: absolute;
+ }
+
  #avatar {
      border-radius: 8rem;
      margin-left: 1rem;
      margin-top: 8rem;
  }
+
 
  .welcomeName {
      margin-top: -7.21rem;
@@ -42,7 +65,15 @@
      margin-top: -1.2rem;
  }
 
-
+.star {
+    font-size: 7px;
+    position:absolute;
+    top: 38px;
+    left: 94.9%;
+    background-color: #49c5b7d2;
+    padding: 3px;
+    color: white;
+}
 
  .navTitle {
      background-color: rgb(56, 62, 69);

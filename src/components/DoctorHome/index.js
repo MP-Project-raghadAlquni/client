@@ -5,6 +5,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { BsCalendarCheck } from "react-icons/bs";
 import { CgDanger } from "react-icons/cg";
+import { FaStarOfLife } from "react-icons/fa";
+import { IoIosNotifications } from "react-icons/io";
 import { BsFillPersonFill } from "react-icons/bs";
 import DoctorHeader from "../DoctorHeader";
 import Login from "../Login";
@@ -17,6 +19,7 @@ const [newReadings, setNewReadings] = useState([]);
 const [patients, setPatients] = useState([]);
 const [numberReadings, setNumberReadings] = useState([]);
 const [apppointment, setApppointment] = useState([]);
+const [showNotif, setShowNotif] = useState(false);
 
 
 const state = useSelector((state) => {
@@ -38,6 +41,11 @@ useEffect(() => {
   // eslint-disable-next-line
 }, [])
 
+
+const handleNotif = () => {
+  setShowNotif(!showNotif);
+};
+
 const getNewReadings = async () => {
   const users = await axios.get(`${process.env.REACT_APP_BASE_URL}/newReadings`, 
   {
@@ -46,7 +54,7 @@ const getNewReadings = async () => {
     }
   })
   setNewReadings(users.data)
-  console.log(users);
+  console.log(users.data, "jj");
   setNumberReadings(users.data.length)
 }
 
@@ -102,23 +110,31 @@ return (
         <h3 id="tableTiltle"> New Readings </h3>
         <table className="table">
           <tr>
+            
             <th className="danger"> <CgDanger /> </th>
             <th className="title"> Patient Name </th>
             <th className="title"> File Number </th>
-            <th className="title"> Readings Number </th>
+            {/* <th className="title"> Readings Number </th> */}
             <th className="title" id="title"> See More </th>
           </tr>
   {newReadings.length ? (
+    
     <>
     {newReadings.map((readings) => {
-       console.log(readings, "here");
+      
+       console.log(readings.byUser.fullName, "here");
+       console.log(readings, "ff");
       return (
         <>
+
+<IoIosNotifications className="notif" onClick={handleNotif} />
+ <FaStarOfLife className="star"/>
           <tr>
             <td> </td>
             <td className="sup"> {readings.byUser.fullName} </td>
             <td className="sup"> {readings.byUser.fileNumber} </td>
-            <td className="sup"> {numberReadings} </td>
+            {/* <td className="sup"> {numberReadings} </td> */}
+            
             <td className="sup" id="sup" onClick={() => {
                                 onePaitent(readings.byUser._id) }} > See More </td>
           </tr>
@@ -153,3 +169,4 @@ return (
 
 
 export default DoctorHome;
+
