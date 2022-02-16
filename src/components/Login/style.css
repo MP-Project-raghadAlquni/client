@@ -14,7 +14,7 @@
 .LoginForm {
     position: relative;
     top: 6rem;
-    left: 20rem;
+    left: 18rem;
     width: 50%;
     text-align: center;
 }
@@ -55,10 +55,10 @@
 
 .vl2 {
     border-left: 1px solid rgba(0, 0, 0, 0.214);
-    height: 310px;
+    height: 340px;
     position: absolute;
-    top: 35px;
-    left: 45%;
+    top: 45px;
+    left: 48%;
   }
 
   #loginButton {

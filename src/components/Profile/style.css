@@ -11,15 +11,15 @@
 
 .RightSideProfile {
     position: absolute;
-    top: 24.6%;
-    left: 33.5%;
+    top: 26%;
+    left: 37%;
 }
 
 
 .RightSideProfile1 {
     position: absolute;
-    top: 25.6%;
-    left: 33.5%;
+    top: 26%;
+    left: 37%;
 }
 
 .paraProfile {
@@ -29,13 +29,13 @@
 
 .RightSideProfile2 {
     position: absolute;
-    top: 24.6%;
+    top: 26%;
     left: 64.5%;
 }
 
 .RightSideProfile22 {
     position: absolute;
-    top: 25.6%;
+    top: 26%;
     left: 64.5%;
 }
 .pup {
@@ -60,8 +60,8 @@ height: 50vh;
 
 .Close {
     position: relative;
-    top: -60%;
-    left: 74%;
+    top: -65%;
+    left: 70%;
     background-color: white;
     border: none;
     font-size: 1.5rem;
@@ -76,7 +76,7 @@ height: 50vh;
 .pup2 {
     position: absolute;
     top: 17%;
-    left: 26%;
+    left: 27.9%;
 }
 
 .ProInp {
@@ -124,7 +124,7 @@ height: 50vh;
     margin-bottom: 5rem;
     position: absolute;
     top: 60%;
-    left: 45.5%;
+    left: 50%;
 }
 .res {
 cursor:pointer;

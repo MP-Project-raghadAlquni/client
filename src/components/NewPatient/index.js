@@ -135,8 +135,8 @@ const NewPatient = () => {
                         {" "}
                         --Diabetes Type--{" "}
                       </option>
-                      <option value="TYPE 1"> Type 1 </option>
-                      <option value="TYPE 2"> Type 2 </option>
+                      <option value="Type 1"> Type 1 </option>
+                      <option value="Type 2"> Type 2 </option>
                     </select>
                   </div>
                   <div className="genderSelect1">

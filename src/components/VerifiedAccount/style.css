@@ -38,13 +38,15 @@
     font-size: 1.5rem;
     width: 40%;
     text-align: center;
+    position: relative;
+    top:-10;
 }
 
 .vl3 {
     border-left: 1px solid rgba(0, 0, 0, 0.214);
-    height: 290px;
+    height: 280px;
     position: absolute;
-    top: 35px;
+    top: 28px;
     left: 45%;
   }
 
@@ -55,8 +57,8 @@
 
   .verfidForm {
     position: relative;
-    top: 4.5rem;
-    left: 20rem;
+    top: 3.5rem;
+    left: 18rem;
     width: 50%;
     text-align: center;
   }

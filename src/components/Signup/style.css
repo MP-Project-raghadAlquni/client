@@ -68,7 +68,7 @@ input[type=file] {
 .SignBtn {
     margin-bottom: -10rem ;
     position: absolute;
-    top: 29.4rem;
+    top: 26.6rem;
     left: 23rem;
     border: none;
     padding: 1rem;
@@ -105,14 +105,14 @@ input[type=file] {
     border-left: 1px solid rgba(0, 0, 0, 0.214);
     height: 400px;
     position: absolute;
-    top: 90px;
+    top: 55px;
     left: 44%;
   }
 
 .ToLogin {
     position: relative;
-    top: -20rem;
-    right: 25rem;
+    top: -22rem;
+    right: 26rem;
     text-align: center;
 }
 
