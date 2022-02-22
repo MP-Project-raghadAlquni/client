@@ -20,6 +20,7 @@ const Login = () => {
   });
   // console.log(state.result.role);
   const login = async () => {
+    try {
     const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, {
       email,
       password,
@@ -45,6 +46,9 @@ const Login = () => {
       } else if (res.data.result.role.role === "admin") {
         navigate("/AdminPage");
       }
+    }
+    } catch (error) {
+      setMessage(`The email or password is incorrect`);
     }
   };
 
@@ -88,6 +92,9 @@ const Login = () => {
                   required
                 />
                 <input id="loginButton" type="submit" value="Login" />
+                <br/>
+                <br/>
+                {message ? <div className="message">{message}</div> : ""}
               </aside>
               <div class="vl2"></div>
               <div className="toVerified">

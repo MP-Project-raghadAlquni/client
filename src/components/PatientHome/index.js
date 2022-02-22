@@ -124,7 +124,7 @@ const PatientHome = () => {
       );
       if (res.status === 200) {
         Swal.fire({
-          title: `Updated Done`,
+          title: `Updated Done1`,
           width: 600,
           padding: "3em",
           color: "##000000",
@@ -136,9 +136,18 @@ const PatientHome = () => {
         });
       }
     } catch (error) {
-      console.log(error);
-    }
-    getNewReadingsForUser(state.Login.token);
+      Swal.fire({
+        title: `Updated Done`,
+        width: 600,
+        padding: "3em",
+        color: "##000000",
+        background: "#fff ",
+        backdrop: `
+              rgba(121, 186, 190,0.1)
+              left top
+              no-repeat`,
+      });   
+     }
   };
 
   return (
